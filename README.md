@@ -16,6 +16,8 @@ It grew out of three earlier projects: Flip Quiz Tutor (the quiz and mistake tra
 | `index.html` / `dist/flip_sketch_tutor.html` | Online. Math is drawn by MathJax 3.2.2 from jsDelivr. |
 | `dist/flip_sketch_tutor_OFFLINE.html` | No internet. The same pinned MathJax bundle is built into the file. |
 | `decks/sample_derivatives_deck.json` | Sample deck: 10 flip cards and 6 sketch problems. |
+| `decks/MTH263_Final_Review_Deck.json` | MTH 263 (Calculus I) final review: 154 questions (116 flip cards, 38 sketch problems), Part A (4.7–6.1), Part B (Chapters 2–4) and past Exams I–III. Answers checked with sympy. |
+| `decks/mth263_final_written_mastery.json` | MTH 263 final, written mastery: 51 sketch problems (needs an AI connected). |
 
 If GitHub Pages is turned on for this repo, the app is at `https://steveonw.github.io/flip-sketch-tutor/`.
 

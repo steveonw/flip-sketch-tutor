@@ -1,0 +1,1710 @@
+{
+ "schema_version": 2,
+ "quiz_name": "MTH 263 Final Review: Part A and Part B",
+ "description": "Final exam Wed Dec 9, 8:00 am. Part A: 4.7 Optimization through 6.1 Area Between Curves. Part B: the main topics of Chapters 2–4. Past Exam I–III: your real exam problems as multiple choice. Built from your class notes, homework, exams, study guide and review videos. Updated Nov 23: added today's class (FTC, net change and motion, u-substitution) and turned the work-it-out problems into sketch problems; those need an AI connected.",
+ "categories": [
+  {
+   "name": "Part A · 4.7 Optimization",
+   "questions": [
+    {
+     "question": "A 24 in × 24 in sheet has an x-by-x square cut from each corner, then the sides fold up into an open box. What is the volume?",
+     "answers": [
+      "V(x) = x²(24 − 2x)",
+      "V(x) = x(24 − x)²",
+      "V(x) = x(24 − 2x)²",
+      "V(x) = x(24 − 2x)"
+     ],
+     "correct_answer": 2,
+     "explanation": "The base is (24 − 2x) on each side, because you lose x at both ends. Height is x. V = x(24 − 2x)²."
+    },
+    {
+     "question": "For that open box, what is the domain of x?",
+     "answers": [
+      "0 < x < 24",
+      "0 < x < 12",
+      "0 ≤ x ≤ 6",
+      "x > 0"
+     ],
+     "correct_answer": 1,
+     "explanation": "Every length must be positive: x > 0 and 24 − 2x > 0, so x < 12."
+    },
+    {
+     "question": "V′(x) = (24 − 2x)(24 − 6x) = 0 gives x = 4 and x = 12. Which do you use, and why?",
+     "answers": [
+      "x = 12, because it gives the bigger box",
+      "Both, then average them",
+      "Neither; check the endpoints only",
+      "x = 4, because x = 12 is outside the domain"
+     ],
+     "correct_answer": 3,
+     "explanation": "x = 12 makes the base zero. V′ goes from positive to negative at x = 4, so that's the maximum."
+    },
+    {
+     "type": "sketch",
+     "question": "A $24$ in × $24$ in sheet has an $x$-by-$x$ square cut from each corner, then the sides fold up into an open box. Find the dimensions and volume of the largest box.",
+     "answer": "$16 \\times 16 \\times 4$ in, $V = 1024\\ \\text{in}^3$",
+     "solution": "$V(x) = x(24 - 2x)^2$ on $0 < x < 12$. $V'(x) = (24 - 2x)(24 - 6x) = 0$ gives $x = 4$ or $x = 12$; $x = 12$ is outside the domain. $V'$ goes $+$ to $-$ at $x = 4$, so it's a max. Base $24 - 8 = 16$, height $4$, $V = 16 \\cdot 16 \\cdot 4 = 1024$. Common traps: base $24 - x$ instead of $24 - 2x$; giving only $x = 4$ instead of the dimensions and volume.",
+     "explanation": "Write $V(x)$, state the domain, justify the max, then answer exactly what was asked, with units.",
+     "pad": "L",
+     "paper": "plain"
+    },
+    {
+     "question": "To find the points on y = 4 − x² closest to (0, 2), which function is easiest to minimize?",
+     "answers": [
+      "d = x + (2 − x²)",
+      "D = x² + (2 − x²)²  (distance squared)",
+      "D = (x − 2)² + (4 − x²)²",
+      "D = x² + (4 − x²)²"
+     ],
+     "correct_answer": 1,
+     "explanation": "Distance squared has the same minimum point and no square root. The vertical gap is (4 − x²) − 2 = 2 − x²."
+    },
+    {
+     "question": "Two positive numbers have product 16. Which pair has the smallest sum?",
+     "answers": [
+      "2 and 8",
+      "1 and 16",
+      "4 and 4",
+      "8 and 8"
+     ],
+     "correct_answer": 2,
+     "explanation": "Sum S = x + 16/x, so S′ = 1 − 16/x² = 0 at x = 4. Sums: 4 + 4 = 8, 2 + 8 = 10, 1 + 16 = 17. (HW 6 #1.)"
+    },
+    {
+     "type": "sketch",
+     "question": "A rectangle has area $512\\ \\text{m}^2$. Find the dimensions that give the smallest perimeter.",
+     "answer": "$16\\sqrt{2}$ m × $16\\sqrt{2}$ m (a square)",
+     "solution": "$y = \\frac{512}{x}$, so $P = 2x + \\frac{1024}{x}$. $P' = 2 - \\frac{1024}{x^2} = 0$ gives $x = \\sqrt{512} = 16\\sqrt{2}$. $P'' = \\frac{2048}{x^3} > 0$, so it's a min. The other side is $\\frac{512}{16\\sqrt2} = 16\\sqrt{2}$. Common trap: $32 \\times 32$ has area $1024$, not $512$.",
+     "explanation": "Use the area to write the perimeter in one variable.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "question": "You found a critical number in an optimization problem. What must you still do?",
+     "answers": [
+      "Nothing; a critical number is always the answer",
+      "Justify it is a max or min (first or second derivative test, or check endpoints), then answer the question",
+      "Plug it into the derivative again",
+      "Round it to two decimal places"
+     ],
+     "correct_answer": 1,
+     "explanation": "A critical number could be a max, a min, or neither. Show which, then give exactly what was asked, with units."
+    }
+   ]
+  },
+  {
+   "name": "Part A · 4.9 Antiderivatives",
+   "questions": [
+    {
+     "question": "∫ x⁵ dx = ?",
+     "answers": [
+      "5x⁴ + C",
+      "x⁶ + C",
+      "x⁶/6 + C",
+      "x⁶/5 + C"
+     ],
+     "correct_answer": 2,
+     "explanation": "Power rule backward: add 1 to the exponent, divide by the new exponent."
+    },
+    {
+     "type": "sketch",
+     "question": "Find $\\displaystyle\\int \\frac{x + 1}{\\sqrt{x}}\\,dx$.",
+     "answer": "$\\frac{2}{3}x^{3/2} + 2x^{1/2} + C$",
+     "solution": "Split first: $\\frac{x + 1}{\\sqrt{x}} = x^{1/2} + x^{-1/2}$. Power rule on each: $\\frac{2}{3}x^{3/2} + 2x^{1/2} + C$. Common trap: integrating top and bottom separately; there is no quotient rule for integrals.",
+     "explanation": "Rewrite as powers of $x$ before integrating. (Class, Nov 4.)",
+     "pad": "S",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "$G'(x) = 24x - 15$ and $G(1) = -1$. Find $G(x)$.",
+     "answer": "$G(x) = 12x^2 - 15x + 2$",
+     "solution": "General: $12x^2 - 15x + C$. Then $12 - 15 + C = -1$, so $C = 2$. Common trap: stopping at $+C$, or using $G(1) = -1$ as $C = -1$.",
+     "explanation": "Integrate, then use the given point to find $C$. (Class, Nov 4.)",
+     "pad": "S",
+     "paper": "plain"
+    },
+    {
+     "question": "∫ (1/x) dx = ?",
+     "answers": [
+      "ln|x| + C",
+      "−1/x² + C",
+      "x⁰/0 + C",
+      "1/(2x²) + C"
+     ],
+     "correct_answer": 0,
+     "explanation": "The power rule fails for n = −1 (you'd divide by 0). This one is ln|x|."
+    },
+    {
+     "question": "∫ sin x dx = ?",
+     "answers": [
+      "cos x + C",
+      "−sin x + C",
+      "sin²x/2 + C",
+      "−cos x + C"
+     ],
+     "correct_answer": 3,
+     "explanation": "Check by differentiating: d/dx(−cos x) = sin x."
+    },
+    {
+     "question": "∫ sec²x dx = ?",
+     "answers": [
+      "sec x tan x + C",
+      "tan x + C",
+      "sec³x/3 + C",
+      "−cot x + C"
+     ],
+     "correct_answer": 1,
+     "explanation": "Because d/dx tan x = sec²x."
+    },
+    {
+     "question": "A ball is thrown up at 48 ft/s from the ground, with a(t) = −32 ft/s². What is its height s(t)?",
+     "answers": [
+      "s(t) = −32t² + 48t",
+      "s(t) = −16t² + 48",
+      "s(t) = −16t² + 48t",
+      "s(t) = 16t² + 48t"
+     ],
+     "correct_answer": 2,
+     "explanation": "Integrate twice: v = −32t + 48 (v(0) = 48), then s = −16t² + 48t (s(0) = 0)."
+    },
+    {
+     "type": "sketch",
+     "question": "$f''(x) = 6x$, $f'(0) = 1$, $f(0) = 2$. Find $f(x)$.",
+     "answer": "$f(x) = x^3 + x + 2$",
+     "solution": "$f'(x) = 3x^2 + C_1$ with $C_1 = 1$. $f(x) = x^3 + x + C_2$ with $C_2 = 2$. Common trap: using one constant for both steps.",
+     "explanation": "Two integrations, two constants.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "question": "Which pair is right? $\\dfrac{d}{dx}\\sin x$ and $\\displaystyle\\int \\sin x\\,dx$",
+     "answers": [
+      "$\\cos x$ and $-\\cos x + C$",
+      "$-\\cos x$ and $\\cos x + C$",
+      "$\\cos x$ and $\\cos x + C$",
+      "$-\\cos x$ and $-\\cos x + C$"
+     ],
+     "correct_answer": 0,
+     "explanation": "Differentiating and integrating go opposite ways: derivative $\\cos x$, antiderivative $-\\cos x + C$. (Class, Nov 23.)"
+    },
+    {
+     "question": "$\\displaystyle\\int a^x\\,dx = \\;?$ (for $a > 0,\\ a \\neq 1$)",
+     "answers": [
+      "$a^x \\ln a + C$",
+      "$\\dfrac{a^{x+1}}{x+1} + C$",
+      "$\\dfrac{a^x}{\\ln a} + C$",
+      "$x\\,a^{x-1} + C$"
+     ],
+     "correct_answer": 2,
+     "explanation": "Differentiating $a^x$ multiplies by $\\ln a$, so integrating divides by it. $a^x \\ln a$ is the derivative. (Class, Nov 23.)"
+    },
+    {
+     "question": "$\\displaystyle\\int \\csc^2 x\\,dx = \\;?$",
+     "answers": [
+      "$\\cot x + C$",
+      "$-\\cot x + C$",
+      "$-\\csc x + C$",
+      "$\\tan x + C$"
+     ],
+     "correct_answer": 1,
+     "explanation": "$\\frac{d}{dx}\\cot x = -\\csc^2 x$, so you need the minus sign. (Class, Nov 23.)"
+    },
+    {
+     "question": "$\\displaystyle\\int \\frac{1}{1 + x^2}\\,dx = \\;?$",
+     "answers": [
+      "$\\ln(1 + x^2) + C$",
+      "$\\arcsin x + C$",
+      "$-\\dfrac{2x}{(1 + x^2)^2} + C$",
+      "$\\arctan x + C$"
+     ],
+     "correct_answer": 3,
+     "explanation": "Inverse tangent pattern. $\\arcsin x$ goes with $\\frac{1}{\\sqrt{1 - x^2}}$. (Class, Nov 23.)"
+    },
+    {
+     "type": "sketch",
+     "question": "Find $\\displaystyle\\int (t^2 - t - 6)\\,dt$.",
+     "answer": "$\\dfrac{t^3}{3} - \\dfrac{t^2}{2} - 6t + C$",
+     "solution": "Term by term: $\\frac{t^3}{3} - \\frac{t^2}{2} - 6t + C$.",
+     "explanation": "No bounds, so a function plus $C$. (Class, Nov 23.)",
+     "pad": "S",
+     "paper": "plain"
+    }
+   ]
+  },
+  {
+   "name": "Part A · 5.1 Riemann Sums",
+   "questions": [
+    {
+     "question": "For n = 4 rectangles on [1, 5], what is Δx?",
+     "answers": [
+      "4",
+      "1/4",
+      "5/4",
+      "1"
+     ],
+     "correct_answer": 3,
+     "explanation": "Δx = (b − a)/n = (5 − 1)/4 = 1."
+    },
+    {
+     "question": "Which formula gives the right endpoints?",
+     "answers": [
+      "xᵢ = a + iΔx",
+      "xᵢ = a + (i − 1)Δx",
+      "xᵢ = b − iΔx",
+      "xᵢ = iΔx / a"
+     ],
+     "correct_answer": 0,
+     "explanation": "a + (i − 1)Δx is the LEFT endpoint."
+    },
+    {
+     "type": "sketch",
+     "question": "Estimate the area under $f(x) = x^2$ on $[0, 2]$ using $4$ rectangles with right endpoints.",
+     "answer": "$3.75$",
+     "solution": "$\\Delta x = \\frac{2 - 0}{4} = 0.5$. Right endpoints $0.5, 1, 1.5, 2$; heights $0.25, 1, 2.25, 4$. Sum $= 7.5$, times $\\Delta x$: $7.5 \\times 0.5 = 3.75$. Common traps: $7.5$ (forgot $\\Delta x$); $1.75$ (left endpoints).",
+     "explanation": "Area $= \\sum f(x_i)\\,\\Delta x$. Don't drop $\\Delta x$.",
+     "pad": "M",
+     "paper": "grid"
+    },
+    {
+     "question": "f is decreasing on [a, b]. A right-endpoint Riemann sum will:",
+     "answers": [
+      "Overestimate the area",
+      "Underestimate the area",
+      "Give the exact area",
+      "Give a negative number"
+     ],
+     "correct_answer": 1,
+     "explanation": "On a falling curve, each rectangle's right edge is its lowest point, so the rectangles sit under the curve."
+    },
+    {
+     "question": "S(n) = 65/3 − 12/n − 8/(3n²) for f(x) = −¼x² + 8 on [1, 5]. What is the exact area?",
+     "answers": [
+      "65/3 − 12",
+      "21.643",
+      "65/3",
+      "0"
+     ],
+     "correct_answer": 2,
+     "explanation": "Let n → ∞: both n-terms vanish. 65/3 ≈ 21.667. (21.643 is S(500), an estimate.)"
+    },
+    {
+     "question": "Σ i² from i = 1 to n = ?",
+     "answers": [
+      "n(n + 1)/2",
+      "n(n + 1)(2n + 1)/6",
+      "n²(n + 1)²/4",
+      "n³/3"
+     ],
+     "correct_answer": 1,
+     "explanation": "Memorize all three: Σi = n(n + 1)/2, Σi² = n(n + 1)(2n + 1)/6, Σi³ = [n(n + 1)/2]²."
+    },
+    {
+     "question": "What did the class board once leave out of a Riemann sum?",
+     "answers": [
+      "The Δx factor",
+      "The limit",
+      "The summation sign",
+      "The function"
+     ],
+     "correct_answer": 0,
+     "explanation": "Area = lim Σ f(xᵢ)·Δx. Without Δx you're adding heights, not areas."
+    }
+   ]
+  },
+  {
+   "name": "Part A · 5.2 The Definite Integral",
+   "questions": [
+    {
+     "question": "∫ₐᵇ f(x) dx measures:",
+     "answers": [
+      "Total area, always positive",
+      "The average value of f",
+      "Net signed area: above the axis counts +, below counts −",
+      "The slope of f at b"
+     ],
+     "correct_answer": 2,
+     "explanation": "For total geometric area, integrate |f|."
+    },
+    {
+     "question": "f is a triangle (base 2, height 1), then a semicircle of radius 2, then a triangle (base 4, height 2), all above the axis on [−4, 6]. ∫₋₄⁶ f dx = ?",
+     "answers": [
+      "5 + 4π",
+      "3 + 2π",
+      "5 − 2π",
+      "5 + 2π"
+     ],
+     "correct_answer": 3,
+     "explanation": "1 + ½π(2²) + 4 = 5 + 2π. (Class, Nov 16.)"
+    },
+    {
+     "question": "Same graph, but the semicircle is BELOW the axis. ∫₋₄⁶ f dx = ?",
+     "answers": [
+      "5 + 2π",
+      "5 − 2π",
+      "−5 − 2π",
+      "1 − 2π"
+     ],
+     "correct_answer": 1,
+     "explanation": "1 − 2π + 4 = 5 − 2π ≈ −1.28. Area below the axis subtracts."
+    },
+    {
+     "question": "If ∫₋₄⁶ f dx = 5 + 2π, then ∫₋₄⁶ 3f(x) dx = ?",
+     "answers": [
+      "15 + 6π",
+      "15 + 2π",
+      "8 + 2π",
+      "5 + 6π"
+     ],
+     "correct_answer": 0,
+     "explanation": "Constants come out front: 3(5 + 2π)."
+    },
+    {
+     "question": "If ∫₁³ f(x) dx = 4, then ∫₃¹ f(x) dx = ?",
+     "answers": [
+      "4",
+      "1/4",
+      "−4",
+      "0"
+     ],
+     "correct_answer": 2,
+     "explanation": "Reversing the limits flips the sign."
+    },
+    {
+     "question": "∫₀⁵ f dx = 10 and ∫₀² f dx = 3. What is ∫₂⁵ f dx?",
+     "answers": [
+      "13",
+      "7",
+      "−7",
+      "30"
+     ],
+     "correct_answer": 1,
+     "explanation": "Split at 2: ∫₀⁵ = ∫₀² + ∫₂⁵, so 10 = 3 + ∫₂⁵."
+    },
+    {
+     "question": "∫₂⁵ 4 dx = ?",
+     "answers": [
+      "4",
+      "20",
+      "7",
+      "12"
+     ],
+     "correct_answer": 3,
+     "explanation": "∫ₐᵇ c dx = c(b − a) = 4 · 3. It's a rectangle."
+    },
+    {
+     "question": "∫ₐᵃ f(x) dx = ?",
+     "answers": [
+      "f(a)",
+      "0",
+      "1",
+      "It depends on f"
+     ],
+     "correct_answer": 1,
+     "explanation": "An interval of zero width has zero area."
+    },
+    {
+     "question": "What does $\\displaystyle\\int_0^2 x^2\\,dx$ give?",
+     "answers": [
+      "The number $\\dfrac{8}{3}$",
+      "The family $\\dfrac{x^3}{3} + C$",
+      "The function $\\dfrac{x^3}{3}$",
+      "The number $4$"
+     ],
+     "correct_answer": 0,
+     "explanation": "Bounds give a number; no bounds give a function plus $C$. $4$ is just $f(2)$. (Class, Nov 23.)"
+    }
+   ]
+  },
+  {
+   "name": "Part A · 5.3 Fundamental Theorem",
+   "questions": [
+    {
+     "question": "d/dx ∫₁ˣ cos(t³) dt = ?",
+     "answers": [
+      "cos(x³)",
+      "sin(x³)",
+      "3x² cos(x³)",
+      "cos(x³) − cos(1)"
+     ],
+     "correct_answer": 0,
+     "explanation": "FTC Part 1: the derivative of the integral gives back the function, evaluated at x."
+    },
+    {
+     "type": "sketch",
+     "question": "Find $\\dfrac{d}{dx}\\displaystyle\\int_1^{x^2} \\cos(t^3)\\,dt$.",
+     "answer": "$2x\\cos(x^6)$",
+     "solution": "FTC Part 1 with the chain rule: plug the upper limit in, $\\cos\\big((x^2)^3\\big) = \\cos(x^6)$, then multiply by $(x^2)' = 2x$. Common traps: $\\cos(x^6)$ (forgot the chain rule); $2x\\cos(x^3)$ (didn't cube $x^2$).",
+     "explanation": "f(upper limit) × (upper limit)′.",
+     "pad": "S",
+     "paper": "plain"
+    },
+    {
+     "question": "d/dx ∫₀^(sin x) √(1 + t²) dt = ?",
+     "answers": [
+      "√(1 + sin²x)",
+      "√(1 + sin²x) · cos x",
+      "√(1 + x²) · cos x",
+      "cos x"
+     ],
+     "correct_answer": 1,
+     "explanation": "f(upper limit) × (upper limit)′."
+    },
+    {
+     "question": "d/dx ∫ₓ⁵ t² dt = ?",
+     "answers": [
+      "x²",
+      "25 − x²",
+      "−x²",
+      "2x"
+     ],
+     "correct_answer": 2,
+     "explanation": "x is the LOWER limit. Flip it: −∫₅ˣ t² dt, so the derivative is −x²."
+    },
+    {
+     "type": "sketch",
+     "question": "Evaluate $\\displaystyle\\int_1^4 \\left(2x + \\frac{1}{\\sqrt{x}}\\right)dx$.",
+     "answer": "$17$",
+     "solution": "Antiderivative $x^2 + 2\\sqrt{x}$. At $4$: $16 + 4 = 20$. At $1$: $1 + 2 = 3$. $20 - 3 = 17$.",
+     "explanation": "FTC Part 2: top minus bottom.",
+     "pad": "S",
+     "paper": "plain"
+    },
+    {
+     "question": "∫₀² (3x² − 2x) dx = ?",
+     "answers": [
+      "4",
+      "8",
+      "6",
+      "12"
+     ],
+     "correct_answer": 0,
+     "explanation": "[x³ − x²] from 0 to 2 = (8 − 4) − 0."
+    },
+    {
+     "question": "∫₀^π sin x dx = ?",
+     "answers": [
+      "0",
+      "−2",
+      "2",
+      "1"
+     ],
+     "correct_answer": 2,
+     "explanation": "[−cos x] from 0 to π = −(−1) − (−1) = 2."
+    },
+    {
+     "question": "Can FTC Part 2 evaluate ∫₋₁¹ (1/x²) dx?",
+     "answers": [
+      "Yes; the answer is −2",
+      "No; 1/x² is not continuous at x = 0",
+      "Yes; the answer is 0",
+      "Yes; the answer is 2"
+     ],
+     "correct_answer": 1,
+     "explanation": "FTC needs f continuous on the whole interval. Blindly plugging in gives −2, which is impossible for a positive function."
+    },
+    {
+     "question": "Why is there no $+C$ in $\\displaystyle\\int_a^b f(x)\\,dx = F(b) - F(a)$?",
+     "answers": [
+      "$C$ is always $0$",
+      "It was forgotten; it should be there",
+      "It cancels: $(F(b) + C) - (F(a) + C)$",
+      "Definite integrals don't use antiderivatives"
+     ],
+     "correct_answer": 2,
+     "explanation": "Any constant appears in both terms and subtracts away. (Class, Nov 23.)"
+    },
+    {
+     "type": "sketch",
+     "question": "Evaluate $\\displaystyle\\int_0^2 x^2\\,dx$.",
+     "answer": "$\\dfrac{8}{3}$",
+     "solution": "$\\left[\\frac{x^3}{3}\\right]_0^2 = \\frac{8}{3}$.",
+     "explanation": "Top minus bottom. (Class, Nov 23 self-check.)",
+     "pad": "S",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "Evaluate $\\displaystyle\\int_{\\pi/2}^{3\\pi/2} -4\\cos x\\,dx$.",
+     "answer": "$8$",
+     "solution": "$[-4\\sin x]_{\\pi/2}^{3\\pi/2} = -4\\left(\\sin\\frac{3\\pi}{2} - \\sin\\frac{\\pi}{2}\\right) = -4(-1 - 1) = 8$.",
+     "explanation": "The curve is above the axis here, so the integral is the area. (Class, Nov 23.)",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "Evaluate $\\displaystyle\\int_0^{\\pi/4} \\sec^2 x\\,dx$.",
+     "answer": "$1$",
+     "solution": "$[\\tan x]_0^{\\pi/4} = 1 - 0 = 1$.",
+     "explanation": "$\\sec^2 x$ is the derivative of $\\tan x$.",
+     "pad": "S",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "Evaluate $\\displaystyle\\int_1^{e} \\frac{1}{x}\\,dx$.",
+     "answer": "$1$",
+     "solution": "$[\\ln|x|]_1^{e} = 1 - 0 = 1$.",
+     "explanation": "Use $\\ln|x|$, not the power rule.",
+     "pad": "S",
+     "paper": "plain"
+    }
+   ]
+  },
+  {
+   "name": "Part A · 5.4 Net Change",
+   "questions": [
+    {
+     "question": "∫ₐᵇ F′(x) dx = F(b) − F(a) says that integrating a rate gives:",
+     "answers": [
+      "The average rate",
+      "The total change",
+      "The maximum value",
+      "The instantaneous rate at b"
+     ],
+     "correct_answer": 1,
+     "explanation": "That's the Net Change Theorem."
+    },
+    {
+     "question": "v(t) = t² − 2t − 3 m/s on [2, 4]. What is the displacement?",
+     "answers": [
+      "4 m",
+      "2/3 m",
+      "−5/3 m",
+      "7/3 m"
+     ],
+     "correct_answer": 1,
+     "explanation": "∫₂⁴ v dt = −5/3 + 7/3 = 2/3."
+    },
+    {
+     "type": "sketch",
+     "question": "$v(t) = t^2 - 2t - 3$ m/s. Find the total distance traveled on $[2, 4]$.",
+     "answer": "$4$ m",
+     "solution": "$v = (t - 3)(t + 1)$ changes sign at $t = 3$. $\\int_2^3 v\\,dt = -\\frac{5}{3}$ and $\\int_3^4 v\\,dt = \\frac{7}{3}$. Distance $= \\frac{5}{3} + \\frac{7}{3} = 4$. Common trap: $\\frac{2}{3}$, the displacement.",
+     "explanation": "Split where $v = 0$, then make each piece positive.",
+     "pad": "L",
+     "paper": "grid"
+    },
+    {
+     "question": "To find total distance, what do you do first?",
+     "answers": [
+      "Find where v(t) = 0 and split the integral there",
+      "Integrate v(t) once",
+      "Find where a(t) = 0",
+      "Take the derivative of v(t)"
+     ],
+     "correct_answer": 0,
+     "explanation": "Then make each piece positive and add."
+    },
+    {
+     "question": "Water flows into a tank at r(t) liters per minute. What does ∫₀¹⁰ r(t) dt mean?",
+     "answers": [
+      "The flow rate at t = 10",
+      "The average flow rate",
+      "The total liters added in the first 10 minutes",
+      "How fast the flow rate changes"
+     ],
+     "correct_answer": 2,
+     "explanation": "Rate × time = amount. Units: (L/min)(min) = L."
+    },
+    {
+     "question": "Given velocity $v(t)$, the displacement from $t = a$ to $t = b$ is…",
+     "answers": [
+      "$\\displaystyle\\int_a^b v(t)\\,dt$",
+      "$v(b) - v(a)$",
+      "$\\displaystyle\\int_a^b |v(t)|\\,dt$",
+      "$v'(b) - v'(a)$"
+     ],
+     "correct_answer": 0,
+     "explanation": "$v(b) - v(a)$ is a change in velocity, and $\\int |v|\\,dt$ is total distance. (Class, Nov 23.)"
+    },
+    {
+     "question": "Given velocity $v(t)$, the total distance traveled from $t = a$ to $t = b$ is…",
+     "answers": [
+      "$\\displaystyle\\int_a^b v(t)\\,dt$",
+      "$\\left|\\displaystyle\\int_a^b v(t)\\,dt\\right|$",
+      "$\\displaystyle\\int_a^b |v(t)|\\,dt$",
+      "$|v(b)| - |v(a)|$"
+     ],
+     "correct_answer": 2,
+     "explanation": "Make every piece positive before adding. Absolute value after integrating lets left and right cancel first. (Class, Nov 23.)"
+    },
+    {
+     "question": "What does $v(4) - v(1)$ measure?",
+     "answers": [
+      "Displacement on $[1, 4]$",
+      "Total distance on $[1, 4]$",
+      "Average velocity on $[1, 4]$",
+      "The change in velocity from $t = 1$ to $t = 4$"
+     ],
+     "correct_answer": 3,
+     "explanation": "To get displacement, integrate the velocity. (Class, Nov 23.)"
+    },
+    {
+     "question": "A particle's displacement on $[1, 7]$ is $0$. What can you conclude?",
+     "answers": [
+      "It never moved",
+      "It ended where it started, but it may have traveled",
+      "Its velocity was $0$ the whole time",
+      "Its total distance is $0$"
+     ],
+     "correct_answer": 1,
+     "explanation": "In class, $v(t) = (t-1)(t-3)(t-6)$ had displacement $0$ but total distance $\\frac{63}{2}$. (Class, Nov 23.)"
+    },
+    {
+     "type": "sketch",
+     "question": "$v(t) = t^2 - t - 6$ m/s. Find the displacement on $[1, 4]$.",
+     "answer": "$-\\dfrac{9}{2}$ m",
+     "solution": "$\\left[\\frac{t^3}{3} - \\frac{t^2}{2} - 6t\\right]_1^4 = \\left(\\frac{64}{3} - 8 - 24\\right) - \\left(\\frac13 - \\frac12 - 6\\right) = -\\frac{9}{2}$.",
+     "explanation": "One signed integral; negative means it ended left of where it started. (Class, Nov 23.)",
+     "pad": "M",
+     "paper": "grid"
+    },
+    {
+     "type": "sketch",
+     "question": "$v(t) = t^2 - t - 6$ m/s. Find the total distance traveled on $[1, 4]$.",
+     "answer": "$\\dfrac{61}{6}$ m",
+     "solution": "$v = (t - 3)(t + 2)$ changes sign at $t = 3$. $-\\int_1^3 v\\,dt + \\int_3^4 v\\,dt = \\frac{22}{3} + \\frac{17}{6} = \\frac{61}{6}$.",
+     "explanation": "Split where $v = 0$. (Class, Nov 23.)",
+     "pad": "L",
+     "paper": "grid"
+    },
+    {
+     "type": "sketch",
+     "question": "$v(t) = (t - 1)(t - 3)(t - 6)$ on $[1, 7]$. Find the displacement and the total distance.",
+     "answer": "Displacement $0$; total distance $\\dfrac{63}{2}$",
+     "solution": "$\\int_1^3 v = \\frac{16}{3}$, $\\int_3^6 v = -\\frac{63}{4}$, $\\int_6^7 v = \\frac{125}{12}$. Displacement $= \\frac{16}{3} - \\frac{63}{4} + \\frac{125}{12} = 0$. Distance $= \\frac{16}{3} + \\frac{63}{4} + \\frac{125}{12} = \\frac{63}{2}$.",
+     "explanation": "Three regions: positive, negative, positive. (Class, Nov 23.)",
+     "pad": "L",
+     "paper": "grid"
+    },
+    {
+     "type": "sketch",
+     "question": "New one: $v(t) = t^2 - 4t + 3$ m/s on $[0, 3]$. Find the displacement and the total distance.",
+     "answer": "Displacement $0$ m; total distance $\\dfrac{8}{3}$ m",
+     "solution": "$v = (t - 1)(t - 3)$. $\\int_0^1 v\\,dt = \\frac{4}{3}$, $\\int_1^3 v\\,dt = -\\frac{4}{3}$. Displacement $0$; distance $\\frac{8}{3}$.",
+     "explanation": "Not from the board: same idea, new numbers.",
+     "pad": "L",
+     "paper": "grid"
+    }
+   ]
+  },
+  {
+   "name": "Part A · 5.5 Substitution",
+   "questions": [
+    {
+     "question": "∫ 2x cos(x²) dx = ?",
+     "answers": [
+      "sin(x²) + C",
+      "2x sin(x²) + C",
+      "x² sin(x²) + C",
+      "cos(x²) + C"
+     ],
+     "correct_answer": 0,
+     "explanation": "u = x², du = 2x dx, so you get ∫ cos u du = sin u + C."
+    },
+    {
+     "question": "In ∫ x²(x³ + 1)⁴ dx, what is the best u?",
+     "answers": [
+      "u = x²",
+      "u = (x³ + 1)⁴",
+      "u = x³ + 1",
+      "u = x³"
+     ],
+     "correct_answer": 2,
+     "explanation": "Pick the inside function whose derivative (3x²) is also in the integral, up to a constant."
+    },
+    {
+     "type": "sketch",
+     "question": "Find $\\displaystyle\\int x^2 (x^3 + 1)^4\\,dx$.",
+     "answer": "$\\dfrac{(x^3 + 1)^5}{15} + C$",
+     "solution": "$u = x^3 + 1$, $du = 3x^2\\,dx$, so $x^2\\,dx = \\frac13\\,du$. $\\frac13\\int u^4\\,du = \\frac{u^5}{15} + C$. Common trap: $\\frac{(x^3+1)^5}{5}$ (forgot the $\\frac13$).",
+     "explanation": "When $du$ is off by a constant, divide by it.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "question": "In ∫₀¹ x(x² + 1)³ dx with u = x² + 1, what are the new limits?",
+     "answers": [
+      "0 to 1",
+      "1 to 2",
+      "1 to 4",
+      "0 to 2"
+     ],
+     "correct_answer": 1,
+     "explanation": "x = 0 → u = 1; x = 1 → u = 2. Change the limits or put x back, never both."
+    },
+    {
+     "type": "sketch",
+     "question": "Evaluate $\\displaystyle\\int_0^1 x(x^2 + 1)^3\\,dx$.",
+     "answer": "$\\dfrac{15}{8}$",
+     "solution": "$u = x^2 + 1$, $du = 2x\\,dx$; limits $x = 0 \\to u = 1$, $x = 1 \\to u = 2$. $\\frac12\\int_1^2 u^3\\,du = \\frac12 \\cdot \\frac{16 - 1}{4} = \\frac{15}{8}$. Common trap: changing to $u$ but keeping the old limits $0$ to $1$.",
+     "explanation": "Change the limits or put $x$ back, never both.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "question": "∫₀^(π/2) cos x · e^(sin x) dx = ?",
+     "answers": [
+      "e",
+      "1",
+      "e − 1",
+      "e + 1"
+     ],
+     "correct_answer": 2,
+     "explanation": "u = sin x goes from 0 to 1: ∫₀¹ eᵘ du = e − 1."
+    },
+    {
+     "question": "∫₋₂² x³ dx = ?",
+     "answers": [
+      "8",
+      "4",
+      "16",
+      "0"
+     ],
+     "correct_answer": 3,
+     "explanation": "x³ is odd, so the left and right areas cancel."
+    },
+    {
+     "question": "∫ e^(5x) dx = ?",
+     "answers": [
+      "5e^(5x) + C",
+      "e^(5x)/5 + C",
+      "e^(5x) + C",
+      "e^(6x)/6 + C"
+     ],
+     "correct_answer": 1,
+     "explanation": "u = 5x, du = 5 dx. Divide by the inside derivative."
+    },
+    {
+     "question": "For $\\displaystyle\\int 6x\\,(3x^2 + 1)^4\\,dx$, which $u$ should you pick?",
+     "answers": [
+      "$u = 6x$",
+      "$u = (3x^2 + 1)^4$",
+      "$u = 3x^2 + 1$",
+      "$u = 3x^2$"
+     ],
+     "correct_answer": 2,
+     "explanation": "The inside expression whose derivative ($6x$) is outside. (Class, Nov 23.)"
+    },
+    {
+     "question": "After you substitute, the new integral should contain…",
+     "answers": [
+      "$x$ and $du$",
+      "$u$ and $dx$",
+      "$x$, $u$ and $dx$",
+      "only $u$ and $du$"
+     ],
+     "correct_answer": 3,
+     "explanation": "Any $x$ left over means the substitution isn't finished. (Class, Nov 23.)"
+    },
+    {
+     "question": "u-substitution is the integration version of which derivative rule?",
+     "answers": [
+      "The product rule",
+      "The chain rule",
+      "The quotient rule",
+      "The power rule"
+     ],
+     "correct_answer": 1,
+     "explanation": "Board example: $\\frac{d}{dx}\\sin(3x^2 - 6x) = (6x - 6)\\cos(3x^2 - 6x)$, run backwards. (Class, Nov 23.)"
+    },
+    {
+     "type": "sketch",
+     "question": "Find $\\displaystyle\\int 2x\\sqrt{1 + x^2}\\,dx$.",
+     "answer": "$\\dfrac{2}{3}(1 + x^2)^{3/2} + C$",
+     "solution": "$u = 1 + x^2$, $du = 2x\\,dx$. $\\int u^{1/2}\\,du = \\frac{2}{3}u^{3/2} + C$.",
+     "explanation": "Check by differentiating. (Class, Nov 23.)",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "Find $\\displaystyle\\int 6x\\,(3x^2 + 1)^4\\,dx$.",
+     "answer": "$\\dfrac{(3x^2 + 1)^5}{5} + C$",
+     "solution": "$u = 3x^2 + 1$, $du = 6x\\,dx$. $\\int u^4\\,du = \\frac{u^5}{5} + C$.",
+     "explanation": "The whole $6x\\,dx$ becomes $du$. (Class, Nov 23 self-check.)",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "New one: find $\\displaystyle\\int x\\cos(x^2)\\,dx$.",
+     "answer": "$\\dfrac{1}{2}\\sin(x^2) + C$",
+     "solution": "$u = x^2$, $du = 2x\\,dx$, so $x\\,dx = \\frac12 du$. $\\frac12\\sin(x^2) + C$.",
+     "explanation": "$du$ is off by a constant, so divide by $2$.",
+     "pad": "M",
+     "paper": "plain"
+    }
+   ]
+  },
+  {
+   "name": "Part A · 6.1 Area Between Curves",
+   "questions": [
+    {
+     "question": "The area between two curves on [a, b] is:",
+     "answers": [
+      "∫ₐᵇ (top − bottom) dx",
+      "∫ₐᵇ (bottom − top) dx",
+      "∫ₐᵇ top · bottom dx",
+      "(top − bottom)(b − a)"
+     ],
+     "correct_answer": 0,
+     "explanation": "Top minus bottom keeps every slice positive."
+    },
+    {
+     "question": "Area between y = x and y = x²?",
+     "answers": [
+      "1/2",
+      "1/3",
+      "1/6",
+      "5/6"
+     ],
+     "correct_answer": 2,
+     "explanation": "They meet at 0 and 1; x is on top: ∫₀¹ (x − x²) dx = 1/2 − 1/3."
+    },
+    {
+     "type": "sketch",
+     "question": "Find the area between $y = 2x$ and $y = x^2$.",
+     "answer": "$\\dfrac{4}{3}$",
+     "solution": "They meet where $2x = x^2$: $x = 0, 2$. On $(0, 2)$, $2x$ is on top. $\\int_0^2 (2x - x^2)\\,dx = \\left[x^2 - \\frac{x^3}{3}\\right]_0^2 = 4 - \\frac{8}{3} = \\frac{4}{3}$.",
+     "explanation": "Find the crossings, decide top and bottom, then integrate top − bottom.",
+     "pad": "M",
+     "paper": "grid"
+    },
+    {
+     "question": "On (0, 1), which is on top: y = x or y = x²?",
+     "answers": [
+      "y = x²",
+      "y = x",
+      "They're equal",
+      "It switches at x = 1/2"
+     ],
+     "correct_answer": 1,
+     "explanation": "Test x = 1/2: 1/2 > 1/4."
+    },
+    {
+     "question": "The two curves cross inside [a, b]. What do you do?",
+     "answers": [
+      "Nothing changes",
+      "Use absolute value of the final answer",
+      "Split the integral at the crossing point",
+      "Integrate with respect to y"
+     ],
+     "correct_answer": 2,
+     "explanation": "Top and bottom swap at the crossing, so each piece needs its own top − bottom."
+    }
+   ]
+  },
+  {
+   "name": "Part B · Limits and Continuity",
+   "questions": [
+    {
+     "question": "lim (x→8) (x − 8)/(x² − 7x − 8) = ?",
+     "answers": [
+      "0",
+      "1/9",
+      "1/7",
+      "Does not exist"
+     ],
+     "correct_answer": 1,
+     "explanation": "Factor: (x − 8)(x + 1). Cancel, then plug in: 1/9. (HW 1 #1.)"
+    },
+    {
+     "question": "lim (x→2) (x² − 4)/(x − 2) = ?",
+     "answers": [
+      "0",
+      "2",
+      "4",
+      "Does not exist"
+     ],
+     "correct_answer": 2,
+     "explanation": "(x − 2)(x + 2)/(x − 2) = x + 2 → 4."
+    },
+    {
+     "question": "f is continuous at a when:",
+     "answers": [
+      "f(a) is defined",
+      "The limit as x → a exists",
+      "f(a) is defined, the limit exists, and they are equal",
+      "f′(a) exists"
+     ],
+     "correct_answer": 2,
+     "explanation": "All three conditions."
+    },
+    {
+     "type": "sketch",
+     "question": "Find $a$ and $b$ so $f$ is continuous everywhere: $f(x) = \\begin{cases} 2 & x \\le -1 \\\\ ax + b & -1 < x < 3 \\\\ -2 & x \\ge 3 \\end{cases}$",
+     "answer": "$a = -1,\\ b = 1$",
+     "solution": "Match at $x = -1$: $-a + b = 2$. Match at $x = 3$: $3a + b = -2$. Subtract: $4a = -4$, so $a = -1$, then $b = 1$.",
+     "explanation": "Set the pieces equal at each break point. The same type as your HW 1 #28 miss.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "question": "f(x) = x² + a for x < 2 and 3x − 1 for x ≥ 2. Which a makes f continuous?",
+     "answers": [
+      "a = 5",
+      "a = −1",
+      "a = 1",
+      "a = 3"
+     ],
+     "correct_answer": 2,
+     "explanation": "Match at x = 2: 4 + a = 5."
+    },
+    {
+     "question": "lim (x→∞) (3x² + 1)/(5x² − x) = ?",
+     "answers": [
+      "3/5",
+      "0",
+      "∞",
+      "3"
+     ],
+     "correct_answer": 0,
+     "explanation": "Same degree top and bottom: ratio of leading coefficients."
+    },
+    {
+     "question": "A two-sided limit exists exactly when:",
+     "answers": [
+      "f(a) is defined",
+      "The left and right limits exist and are equal",
+      "f is differentiable at a",
+      "The function has no holes"
+     ],
+     "correct_answer": 1,
+     "explanation": "Left ≠ right means the limit does not exist."
+    }
+   ]
+  },
+  {
+   "name": "Part B · Derivative Definition and Rules",
+   "questions": [
+    {
+     "question": "The limit definition of the derivative is:",
+     "answers": [
+      "f′(x) = lim (h→0) [f(x + h) − f(x)] / h",
+      "f′(x) = lim (h→0) [f(x + h) + f(x)] / h",
+      "f′(x) = [f(b) − f(a)] / (b − a)",
+      "f′(x) = lim (x→0) f(x)/x"
+     ],
+     "correct_answer": 0,
+     "explanation": "Not given on the exam. Know it cold."
+    },
+    {
+     "question": "For f(x) = x², the difference quotient [f(x + h) − f(x)]/h simplifies to:",
+     "answers": [
+      "2x",
+      "2x + h",
+      "x² + h",
+      "2xh + h²"
+     ],
+     "correct_answer": 1,
+     "explanation": "(2xh + h²)/h = 2x + h. Then h → 0 gives 2x."
+    },
+    {
+     "question": "The quotient rule is:",
+     "answers": [
+      "(f/g)′ = (f′g + fg′)/g²",
+      "(f/g)′ = f′/g′",
+      "(f/g)′ = (f′g − fg′)/g²",
+      "(f/g)′ = (fg′ − f′g)/g²"
+     ],
+     "correct_answer": 2,
+     "explanation": "Bottom first, minus sign."
+    },
+    {
+     "question": "d/dx [x² sin(3x)] = ?",
+     "answers": [
+      "2x cos(3x)",
+      "2x sin(3x) + 3x² cos(3x)",
+      "2x sin(3x) + x² cos(3x)",
+      "6x cos(3x)"
+     ],
+     "correct_answer": 1,
+     "explanation": "Product rule, and sin(3x) pays the chain tax ×3."
+    },
+    {
+     "question": "d/dx [e^(x²) ln x] = ?",
+     "answers": [
+      "e^(x²)/x",
+      "2x e^(x²) ln x",
+      "2x e^(x²) ln x + e^(x²)/x",
+      "e^(x²) ln x + e^(x²)/x"
+     ],
+     "correct_answer": 2,
+     "explanation": "Product rule; e^(x²) needs the chain rule (×2x)."
+    },
+    {
+     "question": "d/dx tan⁻¹(x) = ?",
+     "answers": [
+      "sec²x",
+      "1/(1 + x²)",
+      "1/√(1 − x²)",
+      "−1/(1 + x²)"
+     ],
+     "correct_answer": 1,
+     "explanation": "Inverse tangent: no root, plus sign."
+    }
+   ]
+  },
+  {
+   "name": "Part B · Chain, Implicit, and Log Differentiation",
+   "questions": [
+    {
+     "question": "d/dx tan⁻¹(x²) = ?",
+     "answers": [
+      "1/(1 + x²)",
+      "2x/(1 + x²)",
+      "1/(1 + x⁴)",
+      "2x/(1 + x⁴)"
+     ],
+     "correct_answer": 3,
+     "explanation": "1/(1 + (x²)²) times the inside derivative 2x. (Class, Oct 26.)"
+    },
+    {
+     "question": "The second derivative of tan⁻¹(x²) has numerator:",
+     "answers": [
+      "2 + 6x⁴",
+      "2 − 6x⁴",
+      "2 + 10x⁴",
+      "1 + 10x⁴"
+     ],
+     "correct_answer": 1,
+     "explanation": "(1 + x⁴)(2) − (2x)(4x³) = 2 − 6x⁴. Your notes show a plus sign; the quotient rule needs a minus."
+    },
+    {
+     "question": "x² + y² = 25. dy/dx = ?",
+     "answers": [
+      "−x/y",
+      "x/y",
+      "−y/x",
+      "−2x"
+     ],
+     "correct_answer": 0,
+     "explanation": "2x + 2y·y′ = 0."
+    },
+    {
+     "question": "On x² + y² = 25, what is the tangent slope at (3, 4)?",
+     "answers": [
+      "3/4",
+      "−4/3",
+      "−3/4",
+      "4/3"
+     ],
+     "correct_answer": 2,
+     "explanation": "y′ = −x/y = −3/4."
+    },
+    {
+     "type": "sketch",
+     "question": "$x^3 + y^3 = 6xy$. Find $\\dfrac{dy}{dx}$.",
+     "answer": "$\\dfrac{dy}{dx} = \\dfrac{2y - x^2}{y^2 - 2x}$",
+     "solution": "$3x^2 + 3y^2 y' = 6y + 6xy'$ (product rule on $6xy$). $y'(3y^2 - 6x) = 6y - 3x^2$, so $y' = \\frac{2y - x^2}{y^2 - 2x}$. Common trap: forgetting the product rule on $6xy$, which gives $-\\frac{x^2}{y^2}$.",
+     "explanation": "Every $y$ term gets a $y'$; $xy$ needs the product rule.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "$y = x^x$. Find $\\dfrac{dy}{dx}$.",
+     "answer": "$x^x(\\ln x + 1)$",
+     "solution": "$\\ln y = x\\ln x$. Differentiate: $\\frac{y'}{y} = \\ln x + 1$. Multiply by $y$: $y' = x^x(\\ln x + 1)$. Common trap: the power rule, $x \\cdot x^{x-1}$; the exponent isn't constant.",
+     "explanation": "Variable in the base AND the exponent: take $\\ln$ first.",
+     "pad": "S",
+     "paper": "plain"
+    },
+    {
+     "question": "d/dx sinh x = ?",
+     "answers": [
+      "−cosh x",
+      "cosh x",
+      "sinh x",
+      "−sinh x"
+     ],
+     "correct_answer": 1,
+     "explanation": "Unlike trig, no minus signs: (sinh)′ = cosh and (cosh)′ = sinh."
+    }
+   ]
+  },
+  {
+   "name": "Part B · Related Rates and Linearization",
+   "questions": [
+    {
+     "type": "sketch",
+     "question": "A $10$-ft ladder slides away from a wall at $1$ ft/s. How fast is the top sliding down when the bottom is $6$ ft from the wall?",
+     "answer": "$\\dfrac{3}{4}$ ft/s downward ($\\frac{dy}{dt} = -\\frac{3}{4}$)",
+     "solution": "$x^2 + y^2 = 100$. Differentiate: $2x\\frac{dx}{dt} + 2y\\frac{dy}{dt} = 0$. At this instant $x = 6$, $y = 8$, $\\frac{dx}{dt} = 1$: $12 + 16\\frac{dy}{dt} = 0$, so $\\frac{dy}{dt} = -\\frac{3}{4}$. Common trap: plugging $x = 6$ in before differentiating.",
+     "explanation": "Draw it, write the equation, differentiate, THEN plug in.",
+     "pad": "L",
+     "paper": "plain"
+    },
+    {
+     "question": "In related rates, when do you plug in the numbers for that instant?",
+     "answers": [
+      "Before writing the equation",
+      "After differentiating with respect to t",
+      "Before differentiating",
+      "Only at the very end of the exam"
+     ],
+     "correct_answer": 1,
+     "explanation": "Plugging in early turns a changing quantity into a constant."
+    },
+    {
+     "question": "A circle's radius grows at 2 cm/s. How fast does the area grow when r = 5 cm?",
+     "answers": [
+      "10π cm²/s",
+      "20π cm²/s",
+      "25π cm²/s",
+      "4π cm²/s"
+     ],
+     "correct_answer": 1,
+     "explanation": "dA/dt = 2πr · dr/dt = 2π(5)(2)."
+    },
+    {
+     "question": "The linearization of √x at a = 16 is:",
+     "answers": [
+      "L(x) = 4 + (x − 16)/8",
+      "L(x) = 4 + (x − 16)/4",
+      "L(x) = 16 + (x − 4)/8",
+      "L(x) = 4 + 8(x − 16)"
+     ],
+     "correct_answer": 0,
+     "explanation": "f(16) = 4, f′(16) = 1/(2√16) = 1/8."
+    },
+    {
+     "question": "Use L(x) = 4 + (x − 16)/8 to estimate √17.",
+     "answers": [
+      "4.25",
+      "4.0625",
+      "4.125",
+      "4.1231"
+     ],
+     "correct_answer": 2,
+     "explanation": "L(17) = 4 + 1/8. (4.1231 is the true value; L is an estimate.)"
+    },
+    {
+     "type": "sketch",
+     "question": "Use a linearization at $a = 8$ to estimate $\\sqrt[3]{8.1}$.",
+     "answer": "$2 + \\frac{0.1}{12} \\approx 2.00833$",
+     "solution": "$f(x) = x^{1/3}$, $f(8) = 2$, $f'(x) = \\frac{1}{3}x^{-2/3}$, $f'(8) = \\frac{1}{12}$. $L(x) = 2 + \\frac{1}{12}(x - 8)$, so $L(8.1) = 2 + \\frac{0.1}{12} \\approx 2.00833$.",
+     "explanation": "$L(x) = f(a) + f'(a)(x - a)$.",
+     "pad": "S",
+     "paper": "plain"
+    },
+    {
+     "question": "A cube's side is 12 cm with possible error 0.1 cm. Estimated maximum error in volume?",
+     "answers": [
+      "43.2 cm³",
+      "14.4 cm³",
+      "0.3 cm³",
+      "1.2 cm³"
+     ],
+     "correct_answer": 0,
+     "explanation": "dV = 3s² ds = 3(144)(0.1)."
+    }
+   ]
+  },
+  {
+   "name": "Part B · Extreme Values and the MVT",
+   "questions": [
+    {
+     "question": "A critical number of f is a value c where:",
+     "answers": [
+      "f(c) = 0",
+      "f′(c) = 0 or f′(c) does not exist, with c in the domain of f",
+      "f″(c) = 0",
+      "f has a vertical asymptote"
+     ],
+     "correct_answer": 1,
+     "explanation": "Outside the domain never counts."
+    },
+    {
+     "type": "sketch",
+     "question": "Find the absolute maximum and minimum of $f(x) = x^3 - 3x^2 + 1$ on $\\left[-\\tfrac{1}{2}, 4\\right]$.",
+     "answer": "Max $17$ at $x = 4$; min $-3$ at $x = 2$",
+     "solution": "$f' = 3x^2 - 6x = 3x(x - 2)$: critical numbers $0, 2$. Test them and the endpoints: $f(-\\frac12) = \\frac18$, $f(0) = 1$, $f(2) = -3$, $f(4) = 17$. Common trap: forgetting the endpoints (the max is at $x = 4$).",
+     "explanation": "Closed interval method: critical numbers AND endpoints.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "question": "Critical numbers of g(θ) = 16θ − 4tan θ?",
+     "answers": [
+      "θ = π/3, 2π/3, 4π/3, 5π/3",
+      "θ = π/3 + nπ and 2π/3 + nπ",
+      "θ = π/6 + nπ",
+      "θ = nπ"
+     ],
+     "correct_answer": 1,
+     "explanation": "16 − 4sec²θ = 0 → cos θ = ±½. WebAssign wanted every solution with n (your HW 5 #10 miss)."
+    },
+    {
+     "question": "Is x = 1 a critical number of f(x) = x/ln x?",
+     "answers": [
+      "Yes, because f′ is undefined there",
+      "Yes, because f′(1) = 0",
+      "No, because 1 is not in the domain of f",
+      "No, because f(1) = 1"
+     ],
+     "correct_answer": 2,
+     "explanation": "x = 1 is a vertical asymptote. The only critical number is x = e."
+    },
+    {
+     "type": "sketch",
+     "question": "Find the number $c$ that satisfies the Mean Value Theorem for $f(x) = 5 - \\dfrac{4}{x}$ on $[1, 4]$.",
+     "answer": "$c = 2$",
+     "solution": "Average slope $\\frac{f(4) - f(1)}{4 - 1} = \\frac{4 - 1}{3} = 1$. $f'(c) = \\frac{4}{c^2} = 1$ gives $c = \\pm 2$; only $c = 2$ is in $(1, 4)$.",
+     "explanation": "Set $f'(c)$ equal to the average slope and keep only $c$ inside the interval. (Class, Oct 21.)",
+     "pad": "S",
+     "paper": "plain"
+    },
+    {
+     "question": "The Mean Value Theorem requires f to be:",
+     "answers": [
+      "Increasing on [a, b]",
+      "Continuous on [a, b] and differentiable on (a, b)",
+      "Equal at a and b",
+      "A polynomial"
+     ],
+     "correct_answer": 1,
+     "explanation": "Equal at a and b is the extra condition for Rolle's Theorem."
+    },
+    {
+     "question": "f(x) = x³ − 12x on [0, 3]: absolute min?",
+     "answers": [
+      "−16 at x = 2",
+      "−9 at x = 3",
+      "0 at x = 0",
+      "−16 at x = −2"
+     ],
+     "correct_answer": 0,
+     "explanation": "Only x = 2 is inside [0, 3]. Values: f(0) = 0, f(2) = −16, f(3) = −9."
+    }
+   ]
+  },
+  {
+   "name": "Part B · Shape of a Graph",
+   "questions": [
+    {
+     "question": "f(x) = x⁴ − 4x³ + 2. Critical numbers?",
+     "answers": [
+      "0 and 2",
+      "0 and 3",
+      "3 only",
+      "2 and 3"
+     ],
+     "correct_answer": 1,
+     "explanation": "f′ = 4x²(x − 3)."
+    },
+    {
+     "question": "For f(x) = x⁴ − 4x³ + 2, what happens at x = 0?",
+     "answers": [
+      "Local max",
+      "Local min",
+      "Neither: f′ is negative on both sides",
+      "Absolute min"
+     ],
+     "correct_answer": 2,
+     "explanation": "The graph flattens but keeps falling. It's a stationary inflection point."
+    },
+    {
+     "question": "For f(x) = x⁴ − 4x³ + 2, the minimum point is:",
+     "answers": [
+      "(0, 2)",
+      "(2, −14)",
+      "(3, −25)",
+      "(4, 2)"
+     ],
+     "correct_answer": 2,
+     "explanation": "f′ changes − to + at 3, and f(3) = 81 − 108 + 2."
+    },
+    {
+     "question": "For f(x) = x⁴ − 4x³ + 2, the inflection points are:",
+     "answers": [
+      "(0, 2) and (2, −14)",
+      "(0, 2) and (3, −25)",
+      "(2, −14) only",
+      "(0, 0) and (2, 0)"
+     ],
+     "correct_answer": 0,
+     "explanation": "f″ = 12x(x − 2) changes sign at 0 and 2."
+    },
+    {
+     "question": "Where is f(x) = x⁴ − 4x³ + 2 concave down?",
+     "answers": [
+      "(−∞, 0)",
+      "(0, 2)",
+      "(2, ∞)",
+      "(0, 3)"
+     ],
+     "correct_answer": 1,
+     "explanation": "f″ = 12x(x − 2) < 0 between its zeros."
+    },
+    {
+     "question": "f′(c) = 0 and f″(c) = 0. The second derivative test says:",
+     "answers": [
+      "Local max",
+      "Local min",
+      "Inconclusive; use the first derivative test",
+      "Inflection point"
+     ],
+     "correct_answer": 2,
+     "explanation": "x⁴, −x⁴, and x³ all have f′(0) = f″(0) = 0: min, max, neither."
+    },
+    {
+     "question": "Vertical asymptote(s) of f(x) = x/ln x?",
+     "answers": [
+      "x = 0 and x = 1",
+      "x = 1 only",
+      "x = 0 only",
+      "x = e"
+     ],
+     "correct_answer": 1,
+     "explanation": "As x → 0⁺, x/ln x → 0, so x = 0 is not an asymptote."
+    },
+    {
+     "question": "Local minimum of f(x) = x/ln x?",
+     "answers": [
+      "(1, 0)",
+      "(e, 1)",
+      "(e, e)",
+      "(e², e²/2)"
+     ],
+     "correct_answer": 2,
+     "explanation": "f′ = (ln x − 1)/(ln x)² = 0 at x = e, and f(e) = e. (e², e²/2) is the inflection point."
+    }
+   ]
+  },
+  {
+   "name": "Past Exam I · Limits",
+   "questions": [
+    {
+     "question": "lim (x→9) (x − 9)/(2x² − 17x − 9) = ?",
+     "answers": [
+      "1/17",
+      "1/19",
+      "1/18",
+      "Does not exist"
+     ],
+     "correct_answer": 1,
+     "explanation": "2x² − 17x − 9 = (x − 9)(2x + 1). Cancel, then 1/(2·9 + 1)."
+    },
+    {
+     "type": "sketch",
+     "question": "Evaluate $\\displaystyle\\lim_{x \\to 3} \\frac{\\sqrt{x + 1} - 2}{x - 3}$.",
+     "answer": "$\\dfrac{1}{4}$",
+     "solution": "Multiply top and bottom by $\\sqrt{x + 1} + 2$: the top becomes $x - 3$, which cancels, leaving $\\frac{1}{\\sqrt{x + 1} + 2} \\to \\frac{1}{4}$.",
+     "explanation": "$\\frac{0}{0}$ with a root: multiply by the conjugate.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "question": "f(x) = x/2 − 3 with lim (x→8) f(x) = 1. If the x-tolerance is δ = 0.021, what is the y-tolerance ε?",
+     "answers": [
+      "0.042",
+      "0.021",
+      "0.00525",
+      "0.0105"
+     ],
+     "correct_answer": 3,
+     "explanation": "|x/2 − 3 − 1| = ½|x − 8| < ε means |x − 8| < 2ε. So 2ε = 0.021. Exam I made this worth 35 points."
+    },
+    {
+     "question": "lim f(x) = 21 and lim g(x) = −1/π as x → c. lim [3f(x) − 4g(x)] = ?",
+     "answers": [
+      "63 − 4/π",
+      "63 + 4/π",
+      "59",
+      "63 + 4π"
+     ],
+     "correct_answer": 1,
+     "explanation": "3(21) − 4(−1/π). Watch the double negative."
+    },
+    {
+     "question": "h(x) = (2x² − 11x − 21)/(2x² + 5x + 3). Is h continuous at x = −3/2?",
+     "answers": [
+      "Yes, the limit exists there",
+      "Yes, it's a rational function",
+      "No: h(−3/2) is undefined (a hole)",
+      "No: there's a vertical asymptote there"
+     ],
+     "correct_answer": 2,
+     "explanation": "Both factor with (2x + 3), so it cancels: a hole, not an asymptote. Undefined means not continuous."
+    },
+    {
+     "question": "For that same h(x), what are the vertical and horizontal asymptotes?",
+     "answers": [
+      "VA x = −1, HA y = 1",
+      "VA x = −3/2, HA y = 2",
+      "VA x = −1, HA y = 2",
+      "VA x = −3/2, HA y = 1"
+     ],
+     "correct_answer": 0,
+     "explanation": "After canceling, the denominator is zero at x = −1. Leading coefficients 2/2 give y = 1. Exam I's bonus asked you to fix the wrong version."
+    },
+    {
+     "question": "lim (x→0) x² cos(1/x) = ?",
+     "answers": [
+      "Does not exist; cos(1/x) oscillates",
+      "0, by the Squeeze Theorem",
+      "1",
+      "∞"
+     ],
+     "correct_answer": 1,
+     "explanation": "−x² ≤ x² cos(1/x) ≤ x², and both outsides go to 0."
+    },
+    {
+     "question": "A potato cools in a room at temperature r. What does lim (t→∞) f(t) = r mean?",
+     "answers": [
+      "The potato reaches room temperature at some exact time",
+      "As time passes, the potato's temperature approaches room temperature",
+      "The potato is always at room temperature",
+      "The room heats up to the potato's temperature"
+     ],
+     "correct_answer": 1,
+     "explanation": "A limit approaches; it doesn't have to reach. Say it in the story's words, with units."
+    }
+   ]
+  },
+  {
+   "name": "Past Exam II · Derivatives",
+   "questions": [
+    {
+     "question": "f(x) = 2/∛x + 3cos x − 5eˣ + 2ln x. f″(x) = ?",
+     "answers": [
+      "(8/9)x^(−7/3) − 3cos x − 5eˣ − 2/x²",
+      "(−2/3)x^(−4/3) − 3sin x − 5eˣ + 2/x",
+      "(8/9)x^(−7/3) + 3cos x − 5eˣ + 2/x²",
+      "(8/9)x^(−4/3) − 3cos x − 5eˣ − 2/x²"
+     ],
+     "correct_answer": 0,
+     "explanation": "Rewrite 2/∛x as 2x^(−1/3) first. The second choice is f′, not f″."
+    },
+    {
+     "question": "d/dx [3(4 − 9x)⁴] = ?",
+     "answers": [
+      "12(4 − 9x)³",
+      "−108(4 − 9x)³",
+      "108(4 − 9x)³",
+      "−27(4 − 9x)³"
+     ],
+     "correct_answer": 1,
+     "explanation": "3 · 4(4 − 9x)³ · (−9). The −9 is the chain-rule factor."
+    },
+    {
+     "type": "sketch",
+     "question": "Find $\\dfrac{d}{dx}\\left[\\dfrac{x}{\\sqrt{x^2 + 1}}\\right]$ and simplify.",
+     "answer": "$\\dfrac{1}{(x^2 + 1)^{3/2}}$",
+     "solution": "Product rule on $x(x^2 + 1)^{-1/2}$: $(x^2 + 1)^{-1/2} - x^2(x^2 + 1)^{-3/2}$. Common denominator: $\\frac{x^2 + 1 - x^2}{(x^2 + 1)^{3/2}} = \\frac{1}{(x^2 + 1)^{3/2}}$.",
+     "explanation": "Simplify all the way; the exam expects one fraction.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "$x^2 - 3\\ln y + y^2 = 10$. Find $\\dfrac{dy}{dx}$.",
+     "answer": "$\\dfrac{dy}{dx} = \\dfrac{-2x}{2y - 3/y} = \\dfrac{-2xy}{2y^2 - 3}$",
+     "solution": "$2x - \\frac{3}{y}y' + 2y\\,y' = 0$, so $y'\\left(2y - \\frac{3}{y}\\right) = -2x$. Multiply top and bottom by $y$ for $\\frac{-2xy}{2y^2 - 3}$.",
+     "explanation": "$\\frac{d}{dx}\\ln y = \\frac{y'}{y}$.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "question": "Using logarithmic differentiation, y = x√(x² + 1) gives y′ = ?",
+     "answers": [
+      "(2x² + 1)/√(x² + 1)",
+      "x/√(x² + 1)",
+      "√(x² + 1) + x",
+      "(x² + 1)/√(x² + 1)"
+     ],
+     "correct_answer": 0,
+     "explanation": "ln y = ln x + ½ln(x² + 1), so y′/y = 1/x + x/(x² + 1). Multiply by y and simplify."
+    },
+    {
+     "type": "sketch",
+     "question": "Find $\\dfrac{d}{dx}\\arctan\\!\\left(e^{10x^2}\\right)$.",
+     "answer": "$\\dfrac{20x\\,e^{10x^2}}{1 + e^{20x^2}}$",
+     "solution": "$\\frac{1}{1 + (\\text{inside})^2} \\cdot (\\text{inside})'$. $(e^{10x^2})^2 = e^{20x^2}$ and $(e^{10x^2})' = 20x\\,e^{10x^2}$. Common traps: $1 + e^{10x^2}$ (didn't square); dropping the $20x$.",
+     "explanation": "Two layers of chain rule.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "question": "f(x) = sin[ln(∛(2x + 7))]. f′(x) = ?",
+     "answers": [
+      "2·sin[ln∛(2x + 7)] / (3(2x + 7))",
+      "2·cos[ln∛(2x + 7)] / (3(2x + 7))",
+      "2·cos[ln∛(2x + 7)] / (2x + 7)",
+      "cos[ln∛(2x + 7)] / (3(2x + 7))"
+     ],
+     "correct_answer": 1,
+     "explanation": "The derivative of sin is cos. The Exam II key wrote sin here, which is an error. Inside: ln∛(2x + 7) = ⅓ln(2x + 7), with derivative 2/(3(2x + 7))."
+    },
+    {
+     "type": "sketch",
+     "question": "$x^2 + 4y^2 = 64$. Find $\\dfrac{d^2y}{dx^2}$ in terms of $y$.",
+     "answer": "$-\\dfrac{4}{y^3}$",
+     "solution": "$y' = -\\frac{x}{4y}$. Quotient rule: $y'' = -\\frac{4y - 4x y'}{16y^2}$. Substitute $y'$: $y'' = -\\frac{4y^2 + x^2}{16y^3}$. Use $x^2 + 4y^2 = 64$: $y'' = -\\frac{64}{16y^3} = -\\frac{4}{y^3}$.",
+     "explanation": "Substitute $y'$, then use the original equation to simplify.",
+     "pad": "L",
+     "paper": "plain"
+    },
+    {
+     "question": "Where does x² + 4y² = 64 have horizontal tangent lines?",
+     "answers": [
+      "(8, 0) and (−8, 0)",
+      "(0, 4) and (0, −4)",
+      "(0, 8) and (0, −8)",
+      "(4, 0) and (−4, 0)"
+     ],
+     "correct_answer": 1,
+     "explanation": "y′ = −x/(4y) = 0 when x = 0; then 4y² = 64. (±8, 0) are where the tangents are vertical."
+    },
+    {
+     "question": "Limit definition for f(x) = (3/2)x² − 4x + 1: after canceling Δx, the quotient is:",
+     "answers": [
+      "3x − 4",
+      "3x + (3/2)Δx − 4",
+      "(3/2)x + Δx − 4",
+      "3x + 3Δx − 4"
+     ],
+     "correct_answer": 1,
+     "explanation": "Then let Δx → 0 to get f′(x) = 3x − 4. Keep f(x) in brackets when you subtract it."
+    }
+   ]
+  },
+  {
+   "name": "Past Exam III · Applications",
+   "questions": [
+    {
+     "type": "sketch",
+     "question": "Find all $c$ that satisfy the Mean Value Theorem for $f(x) = 4x^3 - 8x^2 + 7x - 2$ on $[2, 5]$.",
+     "answer": "$c = \\dfrac{2 + \\sqrt{79}}{3} \\approx 3.63$",
+     "solution": "Average slope $\\frac{f(5) - f(2)}{3} = \\frac{333 - 12}{3} = 107$. $f'(c) = 12c^2 - 16c + 7 = 107$ gives $c = \\frac{2 \\pm \\sqrt{79}}{3}$. Only $\\frac{2 + \\sqrt{79}}{3} \\approx 3.63$ is in $(2, 5)$. Common trap: keeping both roots.",
+     "explanation": "Check each $c$ is inside the interval.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "question": "Does the MVT apply to g(x) = 2|x − 4| on [−1, 10]?",
+     "answers": [
+      "Yes; g is continuous",
+      "Yes; c = 4",
+      "No: g isn't differentiable at x = 4 (a corner)",
+      "No: g isn't continuous at x = 4"
+     ],
+     "correct_answer": 2,
+     "explanation": "g is continuous, but it has a sharp corner inside the interval."
+    },
+    {
+     "question": "f(x) = x⁵ − 2x³ + 7x. Find dy as x changes from 6 to 5.9.",
+     "answers": [
+      "627.1",
+      "−6271",
+      "−62.71",
+      "−627.1"
+     ],
+     "correct_answer": 3,
+     "explanation": "dy = f′(6)·dx = (6271)(−0.1). dx is negative because x decreases."
+    },
+    {
+     "question": "Linearize g(x) = 2cos x + 1 at c = π/2 and estimate g(1).",
+     "answers": [
+      "L(x) = −2x + π + 1, so g(1) ≈ 2.1416",
+      "L(x) = 2x − π + 1, so g(1) ≈ −0.1416",
+      "L(x) = 1 − 2x, so g(1) ≈ −1",
+      "L(x) = −2x + π, so g(1) ≈ 1.1416"
+     ],
+     "correct_answer": 0,
+     "explanation": "g(π/2) = 1, g′(π/2) = −2sin(π/2) = −2. The true value is about 2.0806."
+    },
+    {
+     "question": "d/dx tanh⁻¹(4x²) = ?  (Given: d/dx tanh⁻¹x = 1/(1 − x²).)",
+     "answers": [
+      "1/(1 − 16x⁴)",
+      "8x/(1 − 16x⁴)",
+      "8x/(1 − 4x²)",
+      "8x/(1 + 16x⁴)"
+     ],
+     "correct_answer": 1,
+     "explanation": "1/(1 − (4x²)²) × 8x."
+    },
+    {
+     "question": "d/dx sinh(√x) = ?",
+     "answers": [
+      "cosh(√x)/(2√x)",
+      "cosh(√x)",
+      "−cosh(√x)/(2√x)",
+      "sinh(√x)/(2√x)"
+     ],
+     "correct_answer": 0,
+     "explanation": "(sinh)′ = cosh, times the inside derivative 1/(2√x)."
+    },
+    {
+     "question": "f(t) = −4t⁵ − 5t⁴ + 40t³ + 50 has critical numbers −3, 0, 2. How do they classify?",
+     "answers": [
+      "Max at −3, min at 2, neither at 0",
+      "Min at −3, max at 2, neither at 0",
+      "Min at −3, max at 0, min at 2",
+      "All three are maxima"
+     ],
+     "correct_answer": 1,
+     "explanation": "f′ = −20t²(t + 3)(t − 2): − , + , + , −. Decreasing to increasing at −3 (min), increasing to decreasing at 2 (max); no sign change at 0."
+    },
+    {
+     "question": "g(x) = x⁴ − 2x² + 3. Inflection points?",
+     "answers": [
+      "(±1, 2)",
+      "(0, 3)",
+      "(±1/√3, 22/9)",
+      "None"
+     ],
+     "correct_answer": 2,
+     "explanation": "g″ = 12x² − 4 = 0 at ±1/√3, and the sign changes there. (±1, 2) are minima."
+    },
+    {
+     "question": "h(x) = −x⁴ − 8x³ + 5 (the 60-point section). Which is correct?",
+     "answers": [
+      "Max (−6, 437); inflection points (−4, 261) and (0, 5)",
+      "Max (−6, 437) and min (0, 5)",
+      "Min (−6, 437); inflection point (0, 5) only",
+      "Max (0, 5); inflection points (−4, 261) and (−6, 437)"
+     ],
+     "correct_answer": 0,
+     "explanation": "h′ = −4x²(x + 6): + , − , −, so x = 0 is not an extremum. h″ = −12x(x + 4) changes sign at −4 and 0."
+    },
+    {
+     "type": "sketch",
+     "question": "Find the absolute minimum and maximum of $f(x) = 3x^4 - 26x^3 + 60x^2 - 11$ on $[1, 5]$.",
+     "answer": "Min $26$ at $x = 1$; max $114$ at $x = 5$",
+     "solution": "$f' = 12x^3 - 78x^2 + 120x = 6x(2x - 5)(x - 4)$: critical numbers $0, \\frac52, 4$; $x = 0$ is outside $[1, 5]$. Values: $f(1) = 26$, $f(\\frac52) = \\frac{1199}{16} \\approx 74.9$, $f(4) = 53$, $f(5) = 114$. Common trap: using $x = 0$.",
+     "explanation": "Drop critical numbers outside the interval; always test the endpoints.",
+     "pad": "L",
+     "paper": "plain"
+    },
+    {
+     "question": "Use a linear approximation at 16 to estimate √16.5 to three decimal places.",
+     "answers": [
+      "4.062",
+      "4.125",
+      "4.031",
+      "4.063"
+     ],
+     "correct_answer": 3,
+     "explanation": "L(x) = 4 + (x − 16)/8, so L(16.5) = 4.0625 ≈ 4.063. (4.062 is the calculator value, not the estimate.)"
+    },
+    {
+     "question": "A circle's radius is 7 cm with possible error 0.04 cm. Maximum error in the area?",
+     "answers": [
+      "0.28 cm²",
+      "3.52 cm²",
+      "1.76 cm²",
+      "0.88 cm²"
+     ],
+     "correct_answer": 2,
+     "explanation": "dA = 2πr·dr = 2π(7)(0.04) = 14π/25 ≈ 1.76."
+    }
+   ]
+  }
+ ]
+}
