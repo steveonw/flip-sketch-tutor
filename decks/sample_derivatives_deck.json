@@ -1,0 +1,186 @@
+{
+ "schema_version": 2,
+ "quiz_name": "Sample: Derivative Rules + Show Your Work",
+ "description": "Flip cards for the rules you should know cold, plus sketch problems you work by hand. Sketch problems need an AI connected.",
+ "categories": [
+  {
+   "name": "Basic derivatives",
+   "questions": [
+    {
+     "question": "$\\dfrac{d}{dx}\\,\\sin x = \\;?$",
+     "answers": [
+      "$\\cos x$",
+      "$-\\cos x$",
+      "$-\\sin x$",
+      "$\\sec^2 x$"
+     ],
+     "correct_answer": 0,
+     "explanation": "The slope of $\\sin x$ is $\\cos x$; the minus sign belongs to the derivative of $\\cos x$."
+    },
+    {
+     "question": "$\\dfrac{d}{dx}\\,\\cos x = \\;?$",
+     "answers": [
+      "$\\sin x$",
+      "$-\\sin x$",
+      "$-\\cos x$",
+      "$\\cos x$"
+     ],
+     "correct_answer": 1,
+     "explanation": "Cosine falls where sine is positive, so $\\frac{d}{dx}\\cos x = -\\sin x$."
+    },
+    {
+     "question": "$\\dfrac{d}{dx}\\,e^x = \\;?$",
+     "answers": [
+      "$x e^{x-1}$",
+      "$e^{x-1}$",
+      "$e^x$",
+      "$\\ln x$"
+     ],
+     "correct_answer": 2,
+     "explanation": "$e^x$ is its own derivative. The power rule does not apply: the variable is in the exponent."
+    },
+    {
+     "question": "$\\dfrac{d}{dx}\\,\\ln x = \\;?$ (for $x>0$)",
+     "answers": [
+      "$e^x$",
+      "$\\dfrac{1}{x^2}$",
+      "$x\\ln x - x$",
+      "$\\dfrac{1}{x}$"
+     ],
+     "correct_answer": 3,
+     "explanation": "$\\frac{d}{dx}\\ln x = \\frac{1}{x}$. ($x\\ln x - x$ is the antiderivative.)"
+    },
+    {
+     "question": "$\\dfrac{d}{dx}\\,\\tan x = \\;?$",
+     "answers": [
+      "$\\sec^2 x$",
+      "$\\sec x\\tan x$",
+      "$-\\csc^2 x$",
+      "$\\cot x$"
+     ],
+     "correct_answer": 0,
+     "explanation": "Quotient rule on $\\frac{\\sin x}{\\cos x}$ gives $\\frac{1}{\\cos^2 x} = \\sec^2 x$. $\\sec x\\tan x$ is the derivative of $\\sec x$."
+    },
+    {
+     "question": "$\\dfrac{d}{dx}\\,a^x = \\;?$ (for $a>0$)",
+     "answers": [
+      "$x a^{x-1}$",
+      "$a^x \\ln a$",
+      "$a^x$",
+      "$\\dfrac{a^x}{\\ln a}$"
+     ],
+     "correct_answer": 1,
+     "explanation": "$a^x = e^{x\\ln a}$, so the chain rule gives $a^x\\ln a$."
+    }
+   ]
+  },
+  {
+   "name": "Combining rules",
+   "questions": [
+    {
+     "question": "Product rule: $\\dfrac{d}{dx}\\big[f(x)\\,g(x)\\big] = \\;?$",
+     "answers": [
+      "$f'(x)\\,g'(x)$",
+      "$f'(x)g(x) - f(x)g'(x)$",
+      "$f'(x)g(x) + f(x)g'(x)$",
+      "$\\dfrac{f'(x)}{g'(x)}$"
+     ],
+     "correct_answer": 2,
+     "explanation": "Derivative of the first times the second, plus the first times the derivative of the second."
+    },
+    {
+     "question": "Quotient rule: $\\dfrac{d}{dx}\\left[\\dfrac{f}{g}\\right] = \\;?$",
+     "answers": [
+      "$\\dfrac{f'g - fg'}{g^2}$",
+      "$\\dfrac{fg' - f'g}{g^2}$",
+      "$\\dfrac{f'}{g'}$",
+      "$\\dfrac{f'g + fg'}{g^2}$"
+     ],
+     "correct_answer": 0,
+     "explanation": "“Low d-high minus high d-low, over low squared.” Swapping the order flips the sign."
+    },
+    {
+     "question": "Chain rule: $\\dfrac{d}{dx}\\,f\\big(g(x)\\big) = \\;?$",
+     "answers": [
+      "$f'(x)\\,g'(x)$",
+      "$f'\\big(g'(x)\\big)$",
+      "$f\\big(g'(x)\\big)$",
+      "$f'\\big(g(x)\\big)\\,g'(x)$"
+     ],
+     "correct_answer": 3,
+     "explanation": "Outside derivative, evaluated at the inside, times the inside's derivative."
+    },
+    {
+     "question": "$\\displaystyle\\int \\cos x\\,dx = \\;?$",
+     "answers": [
+      "$-\\sin x + C$",
+      "$\\sin x + C$",
+      "$\\cos x + C$",
+      "$-\\cos x + C$"
+     ],
+     "correct_answer": 1,
+     "explanation": "Check by differentiating: $\\frac{d}{dx}\\sin x = \\cos x$."
+    }
+   ]
+  },
+  {
+   "name": "Show your work",
+   "questions": [
+    {
+     "type": "sketch",
+     "question": "Solve for $x$: $\\;3x + 7 = 22$",
+     "answer": "$x = 5$",
+     "solution": "$3x = 15$, so $x = 5$.",
+     "explanation": "Undo the $+7$, then the $\\times 3$.",
+     "pad": "S",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "Find $\\dfrac{d}{dx}\\big[x^2 \\sin x\\big]$.",
+     "answer": "$2x\\sin x + x^2\\cos x$",
+     "solution": "Product rule with $f = x^2$, $g = \\sin x$: $f'g + fg' = 2x\\sin x + x^2\\cos x$.",
+     "explanation": "A product needs the product rule, not $(x^2)'(\\sin x)'$.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "Find $\\dfrac{dy}{dx}$ if $y = e^{3x^2}$.",
+     "answer": "$6x\\,e^{3x^2}$",
+     "solution": "Chain rule: outside $e^u$ stays $e^u$, inside $u = 3x^2$ has $u' = 6x$, so $y' = 6x\\,e^{3x^2}$.",
+     "explanation": "Don't forget the inside derivative.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "Find $\\dfrac{d}{dx}\\left[\\dfrac{\\ln x}{x}\\right]$.",
+     "answer": "$\\dfrac{1 - \\ln x}{x^2}$",
+     "solution": "Quotient rule: $\\dfrac{\\frac{1}{x}\\cdot x - \\ln x \\cdot 1}{x^2} = \\dfrac{1 - \\ln x}{x^2}$.",
+     "explanation": "Low d-high minus high d-low, over low squared.",
+     "pad": "M",
+     "paper": "plain"
+    },
+    {
+     "type": "sketch",
+     "question": "Find the tangent line to $y = x^3 - 2x$ at $x = 1$.",
+     "answer": "$y = x - 2$",
+     "solution": "$y(1) = -1$. $y' = 3x^2 - 2$, so the slope is $y'(1) = 1$. Point-slope: $y + 1 = 1(x - 1)$, so $y = x - 2$.",
+     "explanation": "You need both the point and the slope.",
+     "pad": "M",
+     "paper": "grid"
+    },
+    {
+     "type": "sketch",
+     "question": "Evaluate $\\displaystyle\\int_0^2 \\left(3x^2 + 1\\right)dx$.",
+     "answer": "$10$",
+     "solution": "Antiderivative $x^3 + x$. $(8 + 2) - (0 + 0) = 10$.",
+     "explanation": "Fundamental Theorem: antiderivative at the top minus at the bottom.",
+     "pad": "M",
+     "paper": "plain"
+    }
+   ]
+  }
+ ]
+}
