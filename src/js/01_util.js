@@ -1,7 +1,7 @@
 // ---------- small helpers (from Flip Quiz Tutor) ----------
 const $ = (id) => document.getElementById(id);
 const APP_NAME = 'Flip & Sketch Tutor';
-const APP_VERSION = '1.4.0';
+const APP_VERSION = '1.4.1';
 const IN_CLAUDE = !!(window.claude && typeof window.claude.use === 'function');
 
 function hash(str) {

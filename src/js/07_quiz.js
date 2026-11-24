@@ -88,7 +88,8 @@ function renderQuestion() {
       b.setAttribute('aria-label', `Answer ${i + 1}: ${choice.text}`);
       const hint = document.createElement('span'); hint.className = 'key-hint'; hint.textContent = String(i + 1); hint.setAttribute('aria-hidden', 'true');
       const inner = document.createElement('span'); inner.className = 'card-inner';
-      const front = document.createElement('span'); front.className = 'card-face card-front'; front.textContent = choice.text;
+      const front = document.createElement('span'); front.className = 'card-face card-front' + (choice.text.replace(/\\[a-z]+|[${}]/gi, '').length > 38 ? ' long' : '');
+      const ft = document.createElement('span'); ft.className = 'face-text'; ft.textContent = choice.text; front.appendChild(ft); // one text block, so inline math stays in the sentence
       const back = document.createElement('span'); back.className = 'card-face card-back';
       inner.append(front, back); b.append(hint, inner);
       b.addEventListener('click', () => chooseAnswer(i));
