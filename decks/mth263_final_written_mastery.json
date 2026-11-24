@@ -1,0 +1,526 @@
+{
+  "schema_version": 2,
+  "quiz_name": "MTH 263 Final — Written Mastery",
+  "description": "Supplemental original handwritten practice aligned to the Fall 2026 study guide. Show all work, use exact answers and units. Section 6.1 is conditional on instructor coverage. Requires an image-capable AI for sketch mode. Not an official exam.",
+  "categories": [
+    {
+      "name": "A · Optimization (4.7)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "A rectangular pen beside a river uses 360 m of fencing for three sides. Find the maximum area and dimensions; justify the maximum.",
+          "answer": "90 m by 180 m; 16200 m²",
+          "solution": "Let x be the perpendicular side. A=x(360−2x), 0≤x≤180. A′=360−4x=0 at x=90; A″=−4, and endpoints give zero. Other side 180.",
+          "explanation": "Do not fence the river side.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "An open-top box with square base must hold 500 cm³. Minimize its surface area.",
+          "answer": "$x=10$ cm, $h=5$ cm; $300$ cm²",
+          "solution": "$h=500/x^2$, $S=x^2+2000/x$. $S'=2x-2000/x^2=0$ gives $x=10$. $S''=2+4000/x^3>0$ for $x>0$. Then $h=5$.",
+          "explanation": "Count the base and four walls, not a lid.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Find all points on $y=x^2$ closest to $(0,3)$; justify.",
+          "answer": "$(\\pm\\sqrt{5/2},5/2)$",
+          "solution": "Minimize $D=x^2+(x^2-3)^2$. $D'=2x(2x^2-5)$. Candidates $0,\\pm\\sqrt{5/2}$. Values $9,11/4,11/4$; $D\\to\\infty$ at both ends.",
+          "explanation": "Distance squared has the same minimizers.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "A rectangle is inscribed under $y=16-x^2$ above the x-axis, symmetric about the y-axis. Find its maximum area and dimensions.",
+          "answer": "Width $8/\\sqrt3$, height $32/3$, area $256/(3\\sqrt3)$",
+          "solution": "$A=2x(16-x^2)$, $0\\le x\\le4$. $A'=32-6x^2=0$ gives $x=4/\\sqrt3$. $A''=-12x<0$ there; endpoints zero. Height $16-16/3=32/3$.",
+          "explanation": "The width is twice x.",
+          "pad": "L",
+          "paper": "plain"
+        }
+      ]
+    },
+    {
+      "name": "A · Antiderivatives (4.9)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "Find $\\int(8x^3-6/\\sqrt{x}+4/x)\\,dx$ for $x>0$.",
+          "answer": "$2x^4-12\\sqrt{x}+4\\ln x+C$",
+          "solution": "Rewrite the radical as $x^{-1/2}$ and integrate termwise; $1/x$ gives a logarithm.",
+          "explanation": "Do not apply the power rule to exponent −1.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Find $f$ if $f''(x)=12x-4$, $f'(1)=3$, $f(1)=2$.",
+          "answer": "$f(x)=2x^3-2x^2+x+1$",
+          "solution": "Integrate: $f'=6x^2-4x+C$, so $C=1$. Integrate again: $f=2x^3-2x^2+x+D$, so $D=1$.",
+          "explanation": "Use a separate constant at each integration.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "A particle has $a(t)=6t-2$, $v(0)=4$, $s(0)=7$. Find $s(t)$ and $v(t)$.",
+          "answer": "$v=3t^2-2t+4$, $s=t^3-t^2+4t+7$",
+          "solution": "Integrate acceleration and apply initial velocity; integrate velocity and apply initial position.",
+          "explanation": "Position and velocity have different initial conditions.",
+          "pad": "L",
+          "paper": "plain"
+        }
+      ]
+    },
+    {
+      "name": "A · Riemann sums and definite integrals (5.1–5.2)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "Compute left and right Riemann sums for $f(x)=x^2$ on $[1,3]$ with $n=4$.",
+          "answer": "$L_4=27/4$, $R_4=43/4$",
+          "solution": "$\\Delta x=1/2$. Left points 1,1.5,2,2.5; right points 1.5,2,2.5,3. Multiply each sum of squares by 1/2.",
+          "explanation": "Do not forget rectangle width.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Evaluate $\\int_0^2(3x^2+1)\\,dx$ using the limit of right Riemann sums, not FTC.",
+          "answer": "$10$",
+          "solution": "$\\Delta x=2/n$, $x_i=2i/n$. Sum $24\\sum i^2/n^3+2$. Use $\\sum i^2=n(n+1)(2n+1)/6$; limit $8+2=10$.",
+          "explanation": "Show the summation before taking the limit.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Given $\\int_1^4 f(x)dx=7$ and $\\int_2^4 f(x)dx=-3$, find $\\int_1^2 f(x)dx$ and $\\int_4^1(2f(x)-1)dx$.",
+          "answer": "$10$ and $-11$",
+          "solution": "Additivity gives $7-(-3)=10$. Reverse the bounds: $-[2(7)-(4-1)]=-11$.",
+          "explanation": "A reversed interval negates the integral.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Evaluate $\\int_{-3}^{3}(2x+\\sqrt{9-x^2})dx$ geometrically.",
+          "answer": "$9\\pi/2$",
+          "solution": "The odd linear term cancels; the radical describes the upper semicircle of radius 3.",
+          "explanation": "Use signed area, not absolute area.",
+          "pad": "L",
+          "paper": "plain"
+        }
+      ]
+    },
+    {
+      "name": "A · Fundamental Theorem (5.3)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "Evaluate $\\int_1^4(2\\sqrt{x}-3/x)dx$.",
+          "answer": "$28/3-3\\ln4$",
+          "solution": "Antiderivative $4x^{3/2}/3-3\\ln x$. Subtract endpoint values.",
+          "explanation": "Keep exact logarithms.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Differentiate $G(x)=\\int_2^{x^2+1}\\cos(t^3)dt$.",
+          "answer": "$2x\\cos((x^2+1)^3)$",
+          "solution": "FTC I gives the integrand at the upper bound; chain rule multiplies by $2x$.",
+          "explanation": "Do not integrate the integrand first.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Differentiate $H(x)=\\int_{x}^{x^3}\\sqrt{1+t^2}dt$.",
+          "answer": "$3x^2\\sqrt{1+x^6}-\\sqrt{1+x^2}$",
+          "solution": "Split at a constant bound and apply FTC I to both terms; lower bound contribution is negative.",
+          "explanation": "Differentiate both moving endpoints.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Find $F'(x)$ and the intervals where $F$ increases if $F(x)=\\int_0^x(t^2-4)dt$.",
+          "answer": "$F'=x^2-4$; increasing on $(-\\infty,-2)$ and $(2,\\infty)$",
+          "solution": "FTC I gives $x^2-4=(x-2)(x+2)$. Sign chart is positive outside the roots.",
+          "explanation": "Analyze the derivative, not the accumulated area.",
+          "pad": "L",
+          "paper": "plain"
+        }
+      ]
+    },
+    {
+      "name": "A · Net change and motion (5.4)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "Velocity is $v(t)=t^2-5t+6$ m/s on $[0,4]$. Find displacement and total distance.",
+          "answer": "$16/3$ m; $17/3$ m",
+          "solution": "Zeros 2 and 3; signs +,−,+. Antiderivative $t^3/3-5t^2/2+6t$. Values at 0,2,3,4: 0,14/3,9/2,16/3. Displacement 16/3; distance 14/3+1/6+5/6=17/3.",
+          "explanation": "Split at every velocity sign change.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Water enters a tank at $r(t)=12-2t$ L/min on $[0,5]$. Initially it contains 30 L. Find the final volume.",
+          "answer": "$65$ L",
+          "solution": "Net change $[12t-t^2]_0^5=35$ L. Add the initial 30 L.",
+          "explanation": "The integral is the change, not the final amount.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "A particle starts at $s(0)=10$ m and has $v(t)=3t-6$ m/s. Find position at $t=4$ and distance traveled on $[0,4]$.",
+          "answer": "$10$ m; $12$ m",
+          "solution": "Antiderivative $3t^2/2-6t$ is 0 at 0 and 4, −6 at 2. Net zero; total distance 6+6.",
+          "explanation": "Zero displacement does not mean zero motion.",
+          "pad": "L",
+          "paper": "plain"
+        }
+      ]
+    },
+    {
+      "name": "A · Substitution (5.5)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "Evaluate $\\int x^3(x^4+2)^5dx$.",
+          "answer": "$(x^4+2)^6/24+C$",
+          "solution": "$u=x^4+2$, $du=4x^3dx$; integral is $\\frac14\\int u^5du$.",
+          "explanation": "Account for the factor of 4.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Evaluate $\\int_0^1 2xe^{x^2}dx$.",
+          "answer": "$e-1$",
+          "solution": "$u=x^2$, $du=2xdx$; bounds 0,1. Integral $[e^u]_0^1$.",
+          "explanation": "Change bounds or back-substitute, not both.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Evaluate $\\int \\frac{3x^2}{1+x^3}dx$.",
+          "answer": "$\\ln|1+x^3|+C$",
+          "solution": "$u=1+x^3$, $du=3x^2dx$. Integrate $1/u$.",
+          "explanation": "Include absolute value on the logarithm.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Evaluate $\\int_0^{\\pi/4}\\tan x\\,dx$.",
+          "answer": "$\\tfrac12\\ln2$",
+          "solution": "Write $\\sin x/\\cos x$; $u=\\cos x$, $du=-\\sin xdx$. Evaluate $-\\ln|\\cos x|$ at bounds.",
+          "explanation": "Watch the negative differential.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Evaluate $\\int \\frac{x}{\\sqrt{4+x^2}}dx$.",
+          "answer": "$\\sqrt{4+x^2}+C$",
+          "solution": "$u=4+x^2$, $du=2xdx$. Integral $\\frac12\\int u^{-1/2}du=\\sqrt u+C$.",
+          "explanation": "Check by differentiation.",
+          "pad": "L",
+          "paper": "plain"
+        }
+      ]
+    },
+    {
+      "name": "A · Area between curves (6.1, conditional)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "Find the enclosed area between $y=x^2$ and $y=4x$. Sketch and label intersections.",
+          "answer": "$32/3$",
+          "solution": "Intersections 0,4. Line above parabola on (0,4); integrate $4x-x^2$ to obtain $[2x^2-x^3/3]_0^4$.",
+          "explanation": "Find bounds from intersections.",
+          "pad": "L",
+          "paper": "grid"
+        },
+        {
+          "type": "sketch",
+          "question": "Find total area between $y=x^3$ and $y=x$ on $[-1,1]$.",
+          "answer": "$1/2$",
+          "solution": "Intersections −1,0,1. On (−1,0) cubic above line; on (0,1) line above cubic. Symmetry gives $2\\int_0^1(x-x^3)dx=1/2$.",
+          "explanation": "Split when curves exchange order.",
+          "pad": "L",
+          "paper": "grid"
+        },
+        {
+          "type": "sketch",
+          "question": "Find area enclosed by $x=y^2$ and $x=2y+3$ using horizontal slices (if covered).",
+          "answer": "$32/3$",
+          "solution": "Solve $y^2=2y+3$ to get −1,3. Right minus left: $\\int_{-1}^3(2y+3-y^2)dy=32/3$.",
+          "explanation": "Horizontal slices use right minus left.",
+          "pad": "L",
+          "paper": "grid"
+        }
+      ]
+    },
+    {
+      "name": "B · Limits and continuity (2.1–2.8)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "Evaluate $\\lim_{x\\to 5}(x^2-25)/(x^2-3x-10)$.",
+          "answer": "$10/7$",
+          "solution": "Factor $(x-5)(x+5)$ and $(x-5)(x+2)$; cancel for $x\\ne5$, then substitute.",
+          "explanation": "Cancel factors, not terms.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Evaluate $\\lim_{h\\to0}(\\sqrt{16+h}-4)/h$.",
+          "answer": "$1/8$",
+          "solution": "Multiply by the conjugate to obtain $1/(\\sqrt{16+h}+4)$.",
+          "explanation": "Rationalize before substitution.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Choose $k$ so the function $f(x)=kx+1$ for $x<2$ and $f(x)=x^2+3$ for $x\\ge2$ is continuous at 2.",
+          "answer": "$k=3$",
+          "solution": "Left limit $2k+1$; right limit and value 7. Equate.",
+          "explanation": "Continuity requires both limits and the value to agree.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "For $f(x)=3x-2$, use the epsilon-delta definition to find a suitable $\\delta$ for any $\\epsilon>0$ at $x=4$.",
+          "answer": "$\\delta=\\epsilon/3$",
+          "solution": "Limit 10; $|f(x)-10|=3|x-4|$. If $0<|x-4|<\\epsilon/3$, then $|f(x)-10|<\\epsilon$.",
+          "explanation": "Connect the two inequalities explicitly.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Use the Squeeze Theorem to evaluate $\\lim_{x\\to0}x^2\\cos(3/x)$.",
+          "answer": "$0$",
+          "solution": "$-x^2\\le x^2\\cos(3/x)\\le x^2$; both bounds tend to zero.",
+          "explanation": "The cosine itself has no limit.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Use the limit definition to differentiate $f(x)=4x^2-3x+2$.",
+          "answer": "$8x-3$",
+          "solution": "Expand $f(x+h)-f(x)=8xh+4h^2-3h$. Divide by h, then take the limit.",
+          "explanation": "Do not use shortcut derivative rules.",
+          "pad": "L",
+          "paper": "plain"
+        }
+      ]
+    },
+    {
+      "name": "B · Differentiation (3.1–3.6)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "Differentiate $y=x^2e^{3x}\\sin x$.",
+          "answer": "$e^{3x}(2x\\sin x+3x^2\\sin x+x^2\\cos x)$",
+          "solution": "Apply the product rule to three factors and chain rule to the exponential.",
+          "explanation": "Differentiate each factor once.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Differentiate $y=(x^2+4)/(2x-1)$ and simplify.",
+          "answer": "$(2x^2-2x-8)/(2x-1)^2$",
+          "solution": "Quotient numerator $2x(2x-1)-2(x^2+4)$.",
+          "explanation": "Square the entire denominator.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Differentiate $y=\\arctan(\\sqrt{x})$ for $x>0$.",
+          "answer": "$1/[2\\sqrt{x}(1+x)]$",
+          "solution": "Outer derivative $1/(1+u^2)$ and inner derivative $1/(2\\sqrt x)$.",
+          "explanation": "Do not confuse inverse tangent with reciprocal tangent.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Find $dy/dx$ for $x^2+xy+y^2=7$.",
+          "answer": "$-(2x+y)/(x+2y)$ where denominator nonzero",
+          "solution": "Differentiate: $2x+y+xy'+2yy'=0$. Collect $y'$ terms.",
+          "explanation": "Use product rule on xy.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "For $x^2+4y^2=16$, find $y''$ where $y\\ne0$.",
+          "answer": "$-1/y^3$",
+          "solution": "$y'=-x/(4y)$. Differentiate: $y''=-1/(4y)+xy'/(4y^2)=-1/(4y)-x^2/(16y^3)=-(4y^2+x^2)/(16y^3)=-1/y^3$.",
+          "explanation": "Use the original relation to simplify.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Use logarithmic differentiation on $y=(x^2+1)^x$.",
+          "answer": "$(x^2+1)^x[\\ln(x^2+1)+2x^2/(x^2+1)]$",
+          "solution": "Take logs: $\\ln y=x\\ln(x^2+1)$. Differentiate using product rule; multiply by y.",
+          "explanation": "Both base and exponent vary.",
+          "pad": "L",
+          "paper": "plain"
+        }
+      ]
+    },
+    {
+      "name": "B · Related rates, differentials, hyperbolics (3.9–3.11)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "A spherical balloon expands at 36π cm³/s. Find $dr/dt$ when radius is 3 cm.",
+          "answer": "$1$ cm/s",
+          "solution": "$V=4\\pi r^3/3$, so $dV/dt=4\\pi r^2dr/dt$. Substitute after differentiation.",
+          "explanation": "Do not substitute the radius before differentiating.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "A 13 ft ladder slides away from a wall at 2 ft/s. Find the top's vertical velocity when the bottom is 5 ft away.",
+          "answer": "$-5/6$ ft/s",
+          "solution": "$x^2+y^2=169$, $y=12$. Differentiate: $2x x'+2y y'=0$, so $y'=-5(2)/12$.",
+          "explanation": "Negative means moving downward.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Use linearization at $a=16$ to estimate $\\sqrt{15.8}$; give an exact fraction and decimal.",
+          "answer": "$159/40=3.975$",
+          "solution": "$L(x)=4+(x-16)/8$. At 15.8, subtract 0.025.",
+          "explanation": "Use the derivative at the center.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "A cube has side 10 cm with possible measurement error 0.03 cm. Estimate maximum volume error and relative percentage error using differentials.",
+          "answer": "$9$ cm³; $0.9\\%$",
+          "solution": "$dV=3s^2ds=300(0.03)=9$. Relative error $9/1000=0.009$.",
+          "explanation": "Distinguish absolute error and percentage.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Differentiate $\\sinh(3x^2)$ and $\\tanh^{-1}(2x)$, stating the domain of the latter.",
+          "answer": "$6x\\cosh(3x^2)$; $2/(1-4x^2)$, $|x|<1/2$",
+          "solution": "Use hyperbolic derivative formulas and chain rule; inverse tanh requires argument between −1 and 1.",
+          "explanation": "Inverse hyperbolic tangent is not inverse circular tangent.",
+          "pad": "L",
+          "paper": "plain"
+        }
+      ]
+    },
+    {
+      "name": "B · Extrema and theorems (4.1–4.3)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "Find absolute extrema of $f(x)=x^3-3x$ on $[-2,3]$. Show all candidate values.",
+          "answer": "Minimum −2 at x=−2 and x=1; maximum 18 at x=3.",
+          "solution": "$f'=3(x^2-1)$. Compare $f(-2)=-2$, $f(-1)=2$, $f(1)=-2$, $f(3)=18$.",
+          "explanation": "Check endpoints and interior critical numbers.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Verify Rolle's Theorem for $f(x)=x^2-6x+5$ on $[1,5]$ and find all guaranteed c.",
+          "answer": "$c=3$",
+          "solution": "Polynomial is continuous and differentiable; both endpoint values zero. $f'=2x-6=0$ at 3.",
+          "explanation": "State all three hypotheses.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Verify MVT for $f(x)=1/x$ on $[1,4]$ and find c.",
+          "answer": "$c=2$",
+          "solution": "Continuous on [1,4], differentiable on (1,4). Secant slope $(1/4-1)/3=-1/4$. Set $-1/c^2=-1/4$; only 2 is inside.",
+          "explanation": "Reject solutions outside the interval.",
+          "pad": "L",
+          "paper": "plain"
+        },
+        {
+          "type": "sketch",
+          "question": "Does MVT apply to $f(x)=|x-2|$ on $[0,4]$? Explain.",
+          "answer": "No; not differentiable at x=2.",
+          "solution": "The function is continuous on the closed interval but has a corner inside; differentiability fails.",
+          "explanation": "Continuity alone is not enough.",
+          "pad": "L",
+          "paper": "plain"
+        }
+      ]
+    },
+    {
+      "name": "B · Full curve sketching (4.3, 4.5–4.6)",
+      "questions": [
+        {
+          "type": "sketch",
+          "question": "Fully analyze and sketch $f(x)=x^3-3x^2$: domain, intercepts, critical points, increasing/decreasing intervals, extrema, concavity and inflections.",
+          "answer": "Domain R; intercepts (0,0),(3,0); local max (0,0), min (2,−4); increasing (−∞,0),(2,∞), decreasing (0,2); concave down (−∞,1), up (1,∞); inflection (1,−2).",
+          "solution": "$f'=3x(x-2)$; signs +,−,+. $f''=6(x-1)$; signs −,+. Use cubic end behavior to sketch.",
+          "explanation": "Use two separate sign charts.",
+          "pad": "L",
+          "paper": "grid"
+        },
+        {
+          "type": "sketch",
+          "question": "Fully analyze and sketch $f(x)=x^4-8x^2$: intercepts, symmetry, critical points, extrema, monotonicity, concavity and inflections.",
+          "answer": "Even; zeros 0, ±2√2; max (0,0) local; absolute minima (±2,−16); decreasing (−∞,−2),(0,2), increasing (−2,0),(2,∞); concave up outside ±2/√3, down between; inflections (±2/√3,−80/9).",
+          "solution": "$f'=4x(x-2)(x+2)$; signs −,+,−,+. $f''=12x^2-16$ changes sign at ±2/√3. Both ends rise.",
+          "explanation": "A local maximum need not be absolute.",
+          "pad": "L",
+          "paper": "grid"
+        },
+        {
+          "type": "sketch",
+          "question": "Analyze and sketch $f(x)=x+4/x$: domain, intercepts, asymptotes, extrema, monotonicity, concavity and inflections.",
+          "answer": "Domain x≠0; no intercepts; vertical x=0, slant y=x; local max (−2,−4), local min (2,4); increasing (−∞,−2),(2,∞), decreasing (−2,0),(0,2); concave down x<0, up x>0; no inflections.",
+          "solution": "$f'=1-4/x^2$, $f''=8/x^3$. $f-x=4/x\\to0$ at infinity; one-sided limits at zero are −∞ and +∞. Zero is excluded.",
+          "explanation": "A discontinuity is not an inflection point.",
+          "pad": "L",
+          "paper": "grid"
+        },
+        {
+          "type": "sketch",
+          "question": "Analyze and sketch $f(x)=x/(x-1)$: domain, intercepts, asymptotes, monotonicity, extrema and concavity.",
+          "answer": "Domain x≠1; intercept (0,0); vertical x=1, horizontal y=1; decreasing on both domain intervals; no extrema; concave down x<1, up x>1; no inflections.",
+          "solution": "Rewrite $1+1/(x-1)$. $f'=-1/(x-1)^2$, $f''=2/(x-1)^3$. At 1, left limit −∞, right +∞.",
+          "explanation": "Never merge intervals across a vertical asymptote.",
+          "pad": "L",
+          "paper": "grid"
+        }
+      ]
+    }
+  ]
+}
