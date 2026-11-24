@@ -1,0 +1,392 @@
+  <main class="app">
+    <header class="top">
+      <div>
+        <h1>Flip &amp; Sketch Tutor</h1>
+        <p class="subtitle">Flip cards for the rules. A sketch pad for the work. An AI that reads it.</p>
+      </div>
+      <div class="row">
+        <button id="ai-pill" class="ai-pill quiet" type="button" aria-haspopup="dialog"><span class="dot" aria-hidden="true"></span><span id="ai-pill-text">AI: off</span></button>
+        <button id="load-file-btn" class="quiet" type="button">Load deck</button>
+        <button id="paste-btn" class="quiet" type="button">Paste deck</button>
+        <input id="file-input" type="file" accept=".json,application/json" hidden>
+      </div>
+    </header>
+
+    <section id="welcome" class="panel welcome">
+      <h2>Ready to study?</h2>
+      <p>Decks mix two kinds of questions: four-choice flip cards for rules and formulas, and sketch problems you work out by hand. Flip cards work with no AI at all. Connect an AI and the sketch problems switch on: the AI reads your work and tells you where it went wrong.</p>
+      <div class="row">
+        <button id="builtin-btn" class="primary" type="button">Start the sample derivatives deck</button>
+        <button id="welcome-load-btn" type="button">Load deck file</button>
+        <button id="welcome-paste-btn" type="button">Paste deck JSON</button>
+      </div>
+      <p id="load-error" class="error" role="status" aria-live="polite"></p>
+    </section>
+
+    <div id="workspace" hidden>
+      <nav class="tabs" role="tablist" aria-label="Sections">
+        <button class="tab" role="tab" id="tab-study" aria-controls="view-study" aria-selected="true" type="button">Study</button>
+        <button class="tab" role="tab" id="tab-mistakes" aria-controls="view-mistakes" aria-selected="false" type="button">Mistakes<span id="miss-count" class="count"></span></button>
+        <button class="tab" role="tab" id="tab-record" aria-controls="view-record" aria-selected="false" type="button">My record</button>
+        <button class="tab" role="tab" id="tab-aiquiz" aria-controls="view-aiquiz" aria-selected="false" type="button">AI coach</button>
+      </nav>
+
+      <!-- STUDY -->
+      <section id="view-study" role="tabpanel" aria-labelledby="tab-study">
+        <div class="panel toolbar">
+          <div>
+            <h2 id="deck-name" class="deck-name"></h2>
+            <p id="deck-description" class="deck-description"></p>
+            <span id="deck-unverified" class="badge-unverified" hidden>AI-written: answers not verified</span>
+          </div>
+          <div class="controls">
+            <label class="field" for="category-select">Practice
+              <select id="category-select"></select>
+            </label>
+            <label class="field" for="type-select">Question types
+              <select id="type-select">
+                <option value="mixed">Mixed</option>
+                <option value="mc">Flip cards only</option>
+                <option value="sketch">Sketch problems only</option>
+              </select>
+            </label>
+            <label class="switch" id="auto-wrap" hidden><input id="auto-explain" type="checkbox"> Explain missed cards automatically</label>
+          </div>
+        </div>
+
+        <div id="sketch-notice" class="notice" hidden>
+          <span id="sketch-notice-text"></span>
+          <button id="notice-connect" class="quiet" type="button">Connect an AI</button>
+        </div>
+
+        <div id="question-screen">
+          <section class="panel status-panel" aria-label="Quiz progress">
+            <div class="status-row">
+              <span id="question-count">Question 0 of 0</span>
+              <span id="score-count">Score: 0</span>
+              <span id="category-name"></span>
+            </div>
+            <div id="progress-bar" class="progress-track" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div id="progress-fill" class="progress-fill"></div>
+            </div>
+          </section>
+
+          <div id="quiz-empty" class="panel empty-state" hidden>
+            <strong id="quiz-empty-title">Nothing to practice here.</strong>
+            <span id="quiz-empty-text">Pick another set from the Practice menu.</span>
+          </div>
+
+          <div id="quiz-body">
+            <section class="panel question-box">
+              <span id="qtype" class="qtype"></span>
+              <div id="question-text" class="question-text"></div>
+            </section>
+
+            <!-- flip cards -->
+            <section id="answer-grid" class="answer-grid" aria-label="Answer choices"></section>
+
+            <!-- sketch pad -->
+            <section id="pad-panel" class="panel pad-panel" aria-label="Sketch pad" hidden>
+              <div class="pad-tools" role="toolbar" aria-label="Sketch pad tools">
+                <button id="pad-pen" class="active" type="button" title="Pen (P)">Pen</button>
+                <button id="pad-line" type="button" title="Straight line (L)">Line</button>
+                <button id="pad-erase" type="button" title="Eraser (E)">Eraser</button>
+                <span class="sep" aria-hidden="true"></span>
+                <button class="ink-dot active" data-color="#111827" style="--ink-color:#111827" type="button" aria-label="Black ink"></button>
+                <button class="ink-dot" data-color="#1d4ed8" style="--ink-color:#1d4ed8" type="button" aria-label="Blue ink"></button>
+                <button class="ink-dot" data-color="#b91c1c" style="--ink-color:#b91c1c" type="button" aria-label="Red ink"></button>
+                <select id="pad-width" aria-label="Pen width">
+                  <option value="2">Thin</option>
+                  <option value="3.2" selected>Medium</option>
+                  <option value="5">Thick</option>
+                </select>
+                <span class="sep" aria-hidden="true"></span>
+                <button id="pad-undo" type="button" title="Undo (Ctrl+Z)">Undo</button>
+                <button id="pad-redo" type="button" title="Redo (Ctrl+Shift+Z)">Redo</button>
+                <button id="pad-clear" type="button" title="Clear the pad (Undo brings it back)">Clear</button>
+                <span class="sep" aria-hidden="true"></span>
+                <span class="size-group" role="group" aria-label="Pad size">
+                  <button id="pad-size-S" type="button" data-size="S" title="Small pad">S</button>
+                  <button id="pad-size-M" type="button" data-size="M" title="Medium pad">M</button>
+                  <button id="pad-size-L" type="button" data-size="L" title="Large pad">L</button>
+                </span>
+                <select id="pad-paper" aria-label="Paper">
+                  <option value="plain">Plain</option>
+                  <option value="grid">Graph</option>
+                  <option value="lined">Lined</option>
+                  <option value="dots">Dots</option>
+                </select>
+                <span id="pad-lock" class="lock-note" role="status"></span>
+              </div>
+              <div id="pad-wrap" class="pad-wrap"><canvas id="pad-canvas" aria-label="Drawing area for your work"></canvas></div>
+              <div class="pad-foot">
+                <label class="field" for="typed-answer">Your final answer, typed (optional, helps the AI)
+                  <input id="typed-answer" type="text" autocomplete="off" placeholder="e.g. 2x cos x - x^2 sin x">
+                </label>
+                <div class="row">
+                  <button id="skip-btn" class="quiet" type="button">Skip</button>
+                  <button id="stuck-btn" class="quiet" type="button" title="Counts as a miss, and gives you a first step">I’m stuck</button>
+                  <button id="submit-btn" class="primary" type="button">Submit my work</button>
+                </div>
+              </div>
+            </section>
+
+            <p id="feedback" class="feedback" aria-live="polite"></p>
+            <div id="explanation" class="explanation" hidden></div>
+
+            <section id="hint-box" class="check-box" hidden aria-label="Hints">
+              <h3>Hints</h3>
+              <ol id="hint-list" class="ai-text hint-list"></ol>
+            </section>
+
+            <section id="check-box" class="check-box" hidden aria-label="AI check of your work">
+              <h3 id="check-title">AI check</h3>
+              <div id="check-body" class="ai-text" aria-live="polite"></div>
+              <p id="check-error" class="ai-error" hidden></p>
+              <details id="key-box" class="key-box"><summary>Answer key</summary><div id="key-body" class="ai-text"></div></details>
+              <div id="override" class="override" hidden>
+                Think the AI got it wrong?
+                <button id="ov-right" type="button">Count it right</button>
+                <button id="ov-wrong" type="button">Count it wrong</button>
+                <button id="ov-retry" type="button">Check again</button>
+              </div>
+            </section>
+
+            <div id="ai-actions" class="ai-actions" hidden>
+              <button id="explain-btn" type="button">Explain my mistake</button>
+            </div>
+
+            <section id="tutor" class="tutor" hidden aria-label="AI tutor">
+              <div class="tutor-head">
+                <h3>Tutor</h3>
+                <button id="tutor-stop" class="quiet" type="button" hidden>Stop</button>
+              </div>
+              <div id="tutor-body" class="ai-text" aria-live="polite"></div>
+              <p id="tutor-error" class="ai-error" hidden></p>
+              <div class="ask-row">
+                <input id="tutor-input" type="text" placeholder="Ask a follow-up, like “why isn't it the first one?”" aria-label="Follow-up question" autocomplete="off">
+                <button id="tutor-ask" type="button">Ask</button>
+              </div>
+              <label class="switch small" id="resend-wrap" hidden style="margin-top:8px;padding-bottom:0"><input id="resend-pic" type="checkbox"> Send my picture again with this question</label>
+            </section>
+          </div>
+
+          <div class="panel game-controls">
+            <button id="shuffle-btn" type="button">Shuffle</button>
+            <button id="next-btn" class="primary" type="button" disabled>Next question</button>
+          </div>
+          <p class="hint">Cards: keys 1–4 to answer. Pad: P pen, L line, E eraser, Ctrl+Z undo. Enter or → for the next question.</p>
+        </div>
+
+        <section id="results-screen" class="panel results" hidden>
+          <h2>Round complete</h2>
+          <p id="final-score" class="score-summary"></p>
+          <div class="row">
+            <button id="restart-btn" class="primary" type="button">Play again</button>
+            <button id="shuffle-restart-btn" type="button">Shuffle and play again</button>
+            <button id="practice-missed-btn" type="button">Practice missed questions</button>
+            <button id="results-record-btn" type="button">Review and save my work</button>
+          </div>
+          <ul id="round-misses" class="round-misses"></ul>
+        </section>
+      </section>
+
+      <!-- MISTAKES -->
+      <section id="view-mistakes" role="tabpanel" aria-labelledby="tab-mistakes" hidden>
+        <div class="panel section">
+          <h2>How you're doing</h2>
+          <div id="stats" class="stats"></div>
+          <div id="cat-bars" class="cat-bars"></div>
+        </div>
+        <div class="panel section">
+          <h2>Needs work</h2>
+          <p class="lead">Questions you've missed. One leaves this list after you get it right twice in a row.</p>
+          <div class="row" style="margin-bottom:16px">
+            <button id="mistakes-practice-btn" class="primary" type="button">Practice these</button>
+          </div>
+          <ul id="miss-list" class="miss-list"></ul>
+          <details id="fixed-wrap" class="fixed" hidden>
+            <summary id="fixed-summary">Fixed</summary>
+            <ul id="fixed-list" class="miss-list" style="margin-top:10px"></ul>
+          </details>
+          <div class="row" style="margin-top:22px">
+            <button id="reset-btn" class="danger" type="button">Reset progress for this deck</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECORD -->
+      <section id="view-record" role="tabpanel" aria-labelledby="tab-record" hidden>
+        <div class="panel section">
+          <h2>My record</h2>
+          <p class="lead">Every answer you give is kept here with a picture of your work, what you picked, and whether it was right. Download it to keep a copy, or print it to review later.</p>
+          <div class="row">
+            <label class="field" for="rec-scope">Show
+              <select id="rec-scope">
+                <option value="session">This session</option>
+                <option value="deck">This deck, all sessions</option>
+                <option value="all">Everything</option>
+              </select>
+            </label>
+            <label class="field" for="rec-filter">Which answers
+              <select id="rec-filter">
+                <option value="all">All</option>
+                <option value="wrong">Wrong and unsure only</option>
+                <option value="sketch">Sketch work only</option>
+              </select>
+            </label>
+          </div>
+          <div id="rec-stats" class="stats" style="margin-top:14px"></div>
+          <div class="row">
+            <button id="rec-zip" class="primary" type="button">Download ZIP</button>
+            <button id="rec-sheet" type="button">Download review sheet</button>
+            <button id="rec-print" type="button">Print or save as PDF</button>
+          </div>
+          <div class="row" style="margin-top:10px">
+            <button id="rec-folder" class="quiet" type="button">Save each answer to a folder as I go</button>
+            <span id="folder-state" class="folder-state"></span>
+          </div>
+          <p id="rec-note" class="ai-note" style="margin:10px 0 0"></p>
+          <ul id="rec-list" class="rec-list"></ul>
+          <div class="row" style="margin-top:22px">
+            <button id="rec-clear" class="danger" type="button">Delete everything in my record</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI COACH -->
+      <section id="view-aiquiz" role="tabpanel" aria-labelledby="tab-aiquiz" hidden>
+        <div class="panel section">
+          <h2>Coach me on my mistakes</h2>
+          <p class="lead">The AI gets a text copy of your answers: what you got right, what you picked or wrote when you were wrong, what it read on your sketch pad, and what you want to focus on. It explains the patterns behind your mistakes, then can write a practice set that comes at the same ideas from a new angle. Practice sets are added to this deck. They never replace it.</p>
+          <div class="row" style="align-items:flex-end">
+            <label class="field" for="coach-scope">Use my answers from
+              <select id="coach-scope">
+                <option value="session">This session</option>
+                <option value="deck">This deck, all sessions</option>
+              </select>
+            </label>
+          </div>
+          <label class="field" for="coach-focus" style="margin-top:12px">What do you want help with? (optional)
+            <textarea id="coach-focus" class="plain" placeholder="e.g. I keep mixing up the product and quotient rules, and I had no idea how to start the e^(3x^2) one."></textarea>
+          </label>
+          <div class="row" style="margin-top:12px; align-items:flex-end">
+            <label class="switch"><input id="coach-make-set" type="checkbox" checked> Also make a practice set</label>
+            <label class="field" for="coach-count">How many
+              <select id="coach-count"><option>5</option><option selected>8</option><option>12</option></select>
+            </label>
+            <label class="field" for="coach-mix">Kinds
+              <select id="coach-mix">
+                <option value="mixed">Both kinds</option>
+                <option value="mc">Flip cards only</option>
+                <option value="sketch">Sketch problems only</option>
+              </select>
+            </label>
+          </div>
+          <div class="row" style="margin-top:12px">
+            <button id="coach-btn" class="primary" type="button">Coach me</button>
+            <button id="coach-stop" class="quiet" type="button" hidden>Stop</button>
+          </div>
+          <p id="coach-note" class="ai-note" style="margin:10px 0 0"></p>
+          <div id="coach-wrap" hidden>
+            <div id="coach-out" class="plan-out ai-text"></div>
+            <p id="coach-meta" class="ai-note" style="margin:8px 0 0"></p>
+            <div class="row" style="margin-top:10px">
+              <button id="coach-practice" class="primary" type="button" hidden>Practice the new set</button>
+              <button id="coach-copy" class="quiet" type="button">Copy notes</button>
+              <button id="coach-save" class="quiet" type="button">Download notes</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel section">
+          <h2>Practice sets</h2>
+          <p class="lead">Sets the AI wrote for this deck. They show up in the Practice menu on the Study tab. Their answer keys aren't checked, so they're marked unverified.</p>
+          <ul id="set-list" class="miss-list"></ul>
+        </div>
+
+        <div class="panel section">
+          <details id="topic-wrap">
+            <summary style="cursor:pointer"><strong>Or practice a topic from scratch</strong></summary>
+            <label class="field" for="gen-topic" style="margin-top:12px">What should it quiz you on?
+              <textarea id="gen-topic" class="plain" placeholder="e.g. Implicit differentiation, Calculus I level."></textarea>
+            </label>
+            <div class="row" style="margin-top:12px; align-items:flex-end">
+              <label class="field" for="gen-count">How many
+                <select id="gen-count"><option>5</option><option selected>8</option><option>12</option></select>
+              </label>
+              <label class="field" for="gen-mix">Kinds
+                <select id="gen-mix">
+                  <option value="mixed">Both kinds</option>
+                  <option value="mc">Flip cards only</option>
+                  <option value="sketch">Sketch problems only</option>
+                </select>
+              </label>
+              <button id="gen-btn" type="button">Write a practice set</button>
+              <button id="gen-stop" class="quiet" type="button" hidden>Stop</button>
+            </div>
+            <p id="gen-note" class="ai-note" style="margin:10px 0 0"></p>
+          </details>
+        </div>
+      </section>
+
+      <p id="storage-note" class="storage-note"></p>
+    </div>
+  </main>
+
+  <!-- AI settings -->
+  <div id="ai-modal" class="modal-overlay" hidden>
+    <section class="modal panel" role="dialog" aria-modal="true" aria-labelledby="ai-title">
+      <h2 id="ai-title">Choose your AI</h2>
+      <p id="ai-intro">Flip cards always work with no AI. Pick an AI to unlock sketch problems, explanations and AI-written quizzes.</p>
+      <div class="grid2">
+        <label class="field wide" for="ai-provider">AI
+          <select id="ai-provider"></select>
+        </label>
+        <label class="field" for="ai-model" id="ai-model-wrap">Model
+          <input id="ai-model" type="text" autocomplete="off" spellcheck="false">
+        </label>
+        <label class="field" for="ai-base" id="ai-base-wrap">Server address
+          <input id="ai-base" type="url" autocomplete="off" spellcheck="false" placeholder="http://localhost:11434/v1">
+        </label>
+        <label class="field wide" for="ai-key" id="ai-key-wrap">API key
+          <input id="ai-key" type="password" autocomplete="off" spellcheck="false" placeholder="Paste your key">
+        </label>
+        <label class="field wide" for="ai-mode" id="ai-mode-wrap">AI usage
+          <select id="ai-mode">
+            <option value="normal">Normal: follow-up questions resend the picture of your work</option>
+            <option value="econ">Economy: follow-ups send text only; you can resend the picture when needed</option>
+          </select>
+        </label>
+        <label class="switch wide" id="ai-remember-wrap"><input id="ai-remember" type="checkbox"> Remember the key on this device (otherwise it's forgotten when you close the page)</label>
+      </div>
+      <p id="ai-help" class="ai-note"></p>
+      <p id="ai-status" class="ai-note" role="status" aria-live="polite"></p>
+      <div class="modal-actions">
+        <button id="ai-test" type="button">Test connection</button>
+        <button id="ai-close" class="primary" type="button">Done</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- paste deck -->
+  <div id="paste-modal" class="modal-overlay" hidden>
+    <section class="modal panel" role="dialog" aria-modal="true" aria-labelledby="paste-title">
+      <h2 id="paste-title">Paste a deck</h2>
+      <p>Paste deck JSON below. Code fences are removed automatically. Flip Quiz Tutor decks work as they are.</p>
+      <textarea id="paste-input" placeholder='{"schema_version": 2, "quiz_name": "...", "categories": [...]}'></textarea>
+      <p id="paste-error" class="error" role="status" aria-live="polite"></p>
+      <div class="modal-actions">
+        <button id="cancel-paste-btn" type="button">Cancel</button>
+        <button id="load-paste-btn" class="primary" type="button">Load deck</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- picture zoom -->
+  <div id="zoom-modal" class="modal-overlay zoom" hidden>
+    <section class="modal panel" role="dialog" aria-modal="true" aria-label="Your work">
+      <img id="zoom-img" alt="Your sketch pad work">
+      <div class="modal-actions"><button id="zoom-close" class="primary" type="button">Close</button></div>
+    </section>
+  </div>
