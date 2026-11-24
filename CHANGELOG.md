@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1
+- Flip cards grow to fit long answer choices instead of cutting them off, and long choices use slightly smaller type.
+- MTH 263 deck: added a Formula sheet (46 cards) and 13 product/chain/quotient practice problems.
+
 ## 1.4.0
 - **I'm stuck** becomes **Next step** after the first hint: up to 3 hints, each building on the last, still one miss.
 - Hints stay on screen in their own box, with the check shown below.
