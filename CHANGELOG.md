@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+- New deck `decks/MTH263_Final_Review_All.json`: the MTH 263 final review deck and the Written Mastery deck merged into one (264 questions). The two original decks are unchanged.
+
 ## 1.4.1
 - Flip cards grow to fit long answer choices instead of cutting them off, and long choices use slightly smaller type.
 - MTH 263 deck: added a Formula sheet (46 cards) and 13 product/chain/quotient practice problems.
